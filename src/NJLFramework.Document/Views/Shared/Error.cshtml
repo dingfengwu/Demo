@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "";
+    ViewData["Title"] = "出错啦!";
+}
+
+@{
+    if (Model == 404) {
+        <div class="not-found-top">
+            <div class="not-found-icon">
+                <div class="not-found-title">
+                    404 您正在浏览的页面已经不存在！
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <h1 class="text-danger">Error.</h1>
+        <h2 class="text-danger">An error occurred while processing your request.</h2>
+    }
+}
+
+<link href="~/css/not-found.css" rel="stylesheet" />

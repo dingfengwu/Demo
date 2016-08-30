@@ -1,0 +1,17 @@
+﻿# -------------------------------SQL语句索引文件说明------------------------------------------
+# 作用：SQL语句的索引文件
+# "#"为整行注解符
+#
+# 空一行表示一个配置文件的结束
+#
+# 格式：
+# [文件名]=[key1,key2......]
+#  
+# 例如：
+# mssqlserver=key1,key2,key3
+#
+#
+
+# mssqlserver表示文件名，key1,key2,key3表示sql语句的key值,
+# 那么在这里的意思就是：key1,key2,key3这几个key值的sql语句在文件mssqlserver.txt文件中
+mssqlserver=key1,key2,key3
