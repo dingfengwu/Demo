@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="47cae744-f5b8-4835-b5c2-e786b6a0db9b" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="bedb824b-0ed2-431f-9f34-e0583ecd505a" name="Mono">
+      <description>跨平台的NET运行时</description>
+      <childLayers>
+        <layer Id="8b2856bd-ed85-426e-a26d-e4b23d2c5932" name=".NET CORE 1.0&#xD;&#xA;">
+          <childLayers>
+            <layer Id="55049f5d-a7f2-463f-a0a3-f88d5c0e1c94" name="Entity Framework Core&#xD;&#xA;">
+              <childLayers>
+                <layer Id="b212ff4b-f371-41f0-8d45-8a41fadb127b" name="CustomerService&#xD;&#xA;" />
+                <layer Id="16d4b42a-3cf8-49c2-b5b8-40c8e4daf090" name="OrderService&#xD;&#xA;" />
+                <layer Id="007e2a29-7c65-4288-9321-541d8981c582" name="..." />
+                <layer Id="e5d449b4-884a-49c1-a7a2-b97612c6feeb" name="ApplicationDbContext  注入到每个服务中去&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+              </childLayers>
+            </layer>
+            <layer Id="e1ce8590-3d7b-4565-b086-4d46a8b431ee" name="Web API (Restful)">
+              <childLayers>
+                <layer Id="1464ab0c-9f59-4504-ba41-e3dc15accd7b" name="IDomainService&#xD;&#xA;&#xD;&#xA;注入到Controller">
+                  <childLayers>
+                    <layer Id="9fc856be-329a-45bb-a123-99203bee7b6d" name="ICustomerService" />
+                    <layer Id="206db43d-3e7d-4f8e-a8ab-7bbcd3ae19fb" name="IOrderService" />
+                    <layer Id="3e3314af-366d-4f3b-b77a-183452d4ef92" name="..." />
+                  </childLayers>
+                </layer>
+                <layer Id="bbeaf4a4-839e-45d7-9c18-b815fae4ac49" name="WEB API&#xD;&#xA;&#xD;&#xA;">
+                  <childLayers>
+                    <layer Id="29a27eda-8a62-4312-85a5-1a4cfca47c05" name="Customer" />
+                    <layer Id="777dfc9f-a540-44ea-9421-f987e90712a2" name="Order&#xD;&#xA;" />
+                    <layer Id="9cff454c-07ab-48c2-bd99-fa32a1076a44" name="..." />
+                  </childLayers>
+                </layer>
+              </childLayers>
+            </layer>
+            <layer Id="6f2b370b-121b-4976-bd4a-53a22616e0d8" name="依赖注入(DI)" />
+          </childLayers>
+        </layer>
+        <layer Id="8fd44881-a020-411c-82f8-48d390bc0dc0" name="Database&#xD;&#xA;">
+          <childLayers>
+            <layer Id="2e46cf5b-9414-4014-aca1-d2195ab9551d" name="MSSQL&#xD;&#xA;" />
+            <layer Id="74fec69a-6a75-4f08-9fb8-fbb660021572" name="MYSQL&#xD;&#xA;" />
+            <layer Id="2ebae6f1-17ea-4293-8749-2cfe363d49c7" name="MONGODB&#xD;&#xA;" />
+            <layer Id="988baf53-0a5e-4f81-af90-77b2ae6d352f" name="...&#xD;&#xA;" />
+          </childLayers>
+        </layer>
+        <layer Id="58fe6d79-e82c-4c9b-8e43-cab22e06946d" name="分布式缓存&#xD;&#xA;">
+          <childLayers>
+            <layer Id="f27d713e-4564-41f0-ac46-d30fe5172d4b" name="Redis&#xD;&#xA;" />
+            <layer Id="ffa667ef-4f0b-40fa-964e-da8b4c07107b" name="MemCache&#xD;&#xA;" />
+            <layer Id="66482e78-5ff2-4e6b-b419-56487aaadf58" name="..." />
+          </childLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="403cf89b-27a6-4753-9432-b1517cc588b1" name="前端">
+      <childLayers>
+        <layer Id="1750fd4c-0a86-4b22-a087-e6db73081723" name="手机端">
+          <childLayers>
+            <layer Id="3d354c0f-36e1-460c-a892-74dd438cab4f" name="APICLOUD">
+              <childLayers>
+                <layer Id="89f48c8b-0bf5-480c-96ba-540fe01d175c" name="IONIC" />
+                <layer Id="ffc995b4-6cdd-4e8f-a449-1bbc060b14f9" name="Angularjs2--Typescript" />
+              </childLayers>
+            </layer>
+          </childLayers>
+        </layer>
+        <layer Id="ae601186-3a94-4a49-8edb-4b26785ec285" name="PC端">
+          <childLayers>
+            <layer Id="23bf6622-822c-4980-8bfe-566df987dd2e" name="TypeScript">
+              <childLayers>
+                <layer Id="b11361c7-6312-453b-b502-882d2994ba67" name="Bootstrap" />
+                <layer Id="2d0e5f16-f2fd-4db7-ad28-8e846b272870" name="AngularJs2--Typescript" />
+              </childLayers>
+            </layer>
+          </childLayers>
+        </layer>
+        <layer Id="6afe0b19-3f37-4597-8918-00d16b902733" name="..." />
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

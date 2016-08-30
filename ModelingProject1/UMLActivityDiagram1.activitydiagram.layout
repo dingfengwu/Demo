@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UMLActivityDiagram1">
+  <activityRootModelMoniker Id="ad5ca03c-e263-4877-9938-c7fc9ae8c4ab" />
+  <nestedChildShapes>
+    <objectNodeShape Id="11a94afc-89b4-4cda-a2cc-91d3aa464338" absoluteBounds="3.625, 1, 1.125, 0.375" customColor="White">
+      <objectNodeMoniker Id="9e1f9204-7d34-4a86-a732-ef8ae63a73e8" LastKnownName="PRG 防止重复数据提交" />
+    </objectNodeShape>
+    <objectNodeShape Id="f7c13e87-cfe2-4791-9635-71d4d1df82e1" absoluteBounds="4, 2.5, 1.125, 0.375" customColor="White">
+      <objectNodeMoniker Id="11c0df98-22da-4fb5-b59e-a048f176ab2e" LastKnownName="AutoMap" />
+    </objectNodeShape>
+    <objectNodeShape Id="2124f6cd-93f2-4efb-805d-965fd9022620" absoluteBounds="2.5, 2.5, 1.125, 0.375" customColor="White">
+      <objectNodeMoniker Id="400d5e67-08e0-4b7b-9bc2-ceb0e5e7581f" LastKnownName="ViewModel" />
+    </objectNodeShape>
+    <objectNodeShape Id="9fb16223-4e80-4f72-a8b6-c2857905ef8d" absoluteBounds="5.5, 2.5, 1.125, 0.375" customColor="White">
+      <objectNodeMoniker Id="52fd79ca-55f9-4652-afa1-f3c0888efe06" LastKnownName="DomainModel" />
+    </objectNodeShape>
+  </nestedChildShapes>
+</activityDiagram>

@@ -1,0 +1,1179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="d049cac3-706b-4af7-b376-32ee2e8c16d0"
+  name="ModelingProject1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="23cdf661-61b3-4690-ba97-b2ebf4a600fe"
+        name="Actor1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="5c435aed-634c-4123-94a5-2776cccd4cdf"
+        name="Actor2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c7f7b93c-8d83-4156-ab20-3374baf08a34"
+        name="UseCase1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="88378091-4c72-41c3-be6f-fa2be4e04895"
+        name="Subsystem1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="4a9205ef-6c06-4f2a-9aa9-18e5fe5323aa"
+        name="ApplicationDbContext"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="2e873c98-5d97-40cc-bbd6-8f85b1ee1811"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="29a3f689-88c4-46f2-987a-62ea2344b261"
+                LastKnownName="DbContext"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="a5dd84da-5b7a-4c18-b303-019209d5457a"
+        name="ProjectSequence"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="3d8d6ea8-406a-420b-82ac-6d02a20936ff"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="d887514c-bcff-4e58-a3be-438198e1295f"
+                LastKnownName="CRM系统"
+                LastKnownLocation="ModelingProject1.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="bd256b5c-fd6e-4556-80b1-b248f44f3f5e"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="ModelingProject1.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="95358809-462e-42ed-96ec-5e4dac91829f"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="ModelingProject1.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="e8aaa3e6-7c0a-4cda-a182-a6d1de1e3e59"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="ModelingProject1.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="ff709909-e3db-45a2-bc17-20040c3e7f33"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="ModelingProject1.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="95358809-462e-42ed-96ec-5e4dac91829f"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="aaadaa06-90d0-418a-9655-be398728617f"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingProject1.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="d887514c-bcff-4e58-a3be-438198e1295f"
+                LastKnownName="CRM系统"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7039e9a6-47c8-42b3-a04f-bfa7beacf571"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="5b96af8d-ba9f-4bfa-913e-be867c11f92d"
+                LastKnownName="浏览器"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e8aaa3e6-7c0a-4cda-a182-a6d1de1e3e59"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="d887514c-bcff-4e58-a3be-438198e1295f"
+                LastKnownName="CRM系统"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ff709909-e3db-45a2-bc17-20040c3e7f33"
+            name="MessageOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="d887514c-bcff-4e58-a3be-438198e1295f"
+                LastKnownName="CRM系统"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2a3da388-548b-494d-9975-1ef3eaeba7ef"
+            name="MessageOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="5b96af8d-ba9f-4bfa-913e-be867c11f92d"
+                LastKnownName="浏览器"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="bd256b5c-fd6e-4556-80b1-b248f44f3f5e"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="e97382ba-0afa-461d-af00-bfb3935b9d3e"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingProject1.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="d887514c-bcff-4e58-a3be-438198e1295f"
+                LastKnownName="CRM系统"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="0624a692-1f9f-4f5b-8df6-2cd0cb25c1b8"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="92cfb755-4c83-4b7e-b024-595a30cedeb7"
+                LastKnownName="WEB API"
+                LastKnownLocation="ModelingProject1.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="4c968377-984f-414f-979a-b061f2cf28ce"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="ModelingProject1.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="767108da-fba1-476c-95db-3e82c2b36fd2"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="ModelingProject1.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="c0bdcde9-3ea7-43b1-8c9f-25f01c39a739"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="ModelingProject1.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="d7875155-1025-4abf-bbad-13f873972d6c"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="ModelingProject1.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="767108da-fba1-476c-95db-3e82c2b36fd2"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="112fabdd-29f5-4ee4-85fb-e4b00f054926"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingProject1.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="92cfb755-4c83-4b7e-b024-595a30cedeb7"
+                LastKnownName="WEB API"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c0bdcde9-3ea7-43b1-8c9f-25f01c39a739"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="92cfb755-4c83-4b7e-b024-595a30cedeb7"
+                LastKnownName="WEB API"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3e21a334-e411-4b9a-a963-7eb3c2ee0f4a"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="5b96af8d-ba9f-4bfa-913e-be867c11f92d"
+                LastKnownName="浏览器"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d7875155-1025-4abf-bbad-13f873972d6c"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="92cfb755-4c83-4b7e-b024-595a30cedeb7"
+                LastKnownName="WEB API"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="dd8f8a38-eed5-456d-a17c-87afe9db7874"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="5b96af8d-ba9f-4bfa-913e-be867c11f92d"
+                LastKnownName="浏览器"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="4c968377-984f-414f-979a-b061f2cf28ce"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ac442445-91d7-47a6-a1d0-bcba534a696a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingProject1.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="92cfb755-4c83-4b7e-b024-595a30cedeb7"
+                LastKnownName="WEB API"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="1c1e7038-422b-43e7-8ee7-fdcfe13c0e15"
+            name="BehaviorExecutionSpecification4">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="d887514c-bcff-4e58-a3be-438198e1295f"
+                LastKnownName="CRM系统"
+                LastKnownLocation="ModelingProject1.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="3f33446d-0eee-4796-aa5d-80f67ee7b218"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="ModelingProject1.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="2f9a0034-b8f4-46eb-8f00-b0d92432b1cd"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="ModelingProject1.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="599f23b1-eb54-4bbb-bb60-4030fd5a4526"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="ModelingProject1.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="50a9b147-b7e5-48cd-a0e6-e76b791439d8"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="ModelingProject1.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="2f9a0034-b8f4-46eb-8f00-b0d92432b1cd"
+            name="ExecutionOccurrenceSpecification7">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="2ef83abd-212e-4cb5-a005-e5c67c3dfa87"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingProject1.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="d887514c-bcff-4e58-a3be-438198e1295f"
+                LastKnownName="CRM系统"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9e77100b-aa4e-401d-bed0-58a9dc6279d9"
+            name="MessageOccurrenceSpecification13">
+            <covered>
+              <lifelineMoniker
+                Id="5b96af8d-ba9f-4bfa-913e-be867c11f92d"
+                LastKnownName="浏览器"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="599f23b1-eb54-4bbb-bb60-4030fd5a4526"
+            name="MessageOccurrenceSpecification14">
+            <covered>
+              <lifelineMoniker
+                Id="d887514c-bcff-4e58-a3be-438198e1295f"
+                LastKnownName="CRM系统"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="50a9b147-b7e5-48cd-a0e6-e76b791439d8"
+            name="MessageOccurrenceSpecification15">
+            <covered>
+              <lifelineMoniker
+                Id="d887514c-bcff-4e58-a3be-438198e1295f"
+                LastKnownName="CRM系统"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="92659bb8-69ca-4d92-a9bd-38ee31caa2e5"
+            name="MessageOccurrenceSpecification16">
+            <covered>
+              <lifelineMoniker
+                Id="5b96af8d-ba9f-4bfa-913e-be867c11f92d"
+                LastKnownName="浏览器"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="3f33446d-0eee-4796-aa5d-80f67ee7b218"
+            name="ExecutionOccurrenceSpecification8">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="c7ac4208-acbe-4c8a-a027-ab710badcf78"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingProject1.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="d887514c-bcff-4e58-a3be-438198e1295f"
+                LastKnownName="CRM系统"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="3aafbe48-2deb-4633-9a88-bc9ce0cbf79f"
+            name="BehaviorExecutionSpecification5">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="92cfb755-4c83-4b7e-b024-595a30cedeb7"
+                LastKnownName="WEB API"
+                LastKnownLocation="ModelingProject1.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="256cd0ba-e533-4b10-ba8a-cd0a1415c016"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="ModelingProject1.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="3570ee19-a1de-4e6b-9ecf-ee473b77423a"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="ModelingProject1.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="85fc2f3f-18be-4db1-a1de-920854832ce6"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="ModelingProject1.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9567d5bf-a8b3-4cf5-a4e3-5cffabcc0f0f"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="ModelingProject1.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="3570ee19-a1de-4e6b-9ecf-ee473b77423a"
+            name="ExecutionOccurrenceSpecification9">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f12f9043-5ec9-42f4-bc7d-7cc93a55bb22"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingProject1.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="92cfb755-4c83-4b7e-b024-595a30cedeb7"
+                LastKnownName="WEB API"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="15f57954-011a-458d-bf17-80b7a05396ea"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="5b96af8d-ba9f-4bfa-913e-be867c11f92d"
+                LastKnownName="浏览器"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="85fc2f3f-18be-4db1-a1de-920854832ce6"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="92cfb755-4c83-4b7e-b024-595a30cedeb7"
+                LastKnownName="WEB API"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9567d5bf-a8b3-4cf5-a4e3-5cffabcc0f0f"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="92cfb755-4c83-4b7e-b024-595a30cedeb7"
+                LastKnownName="WEB API"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2300a2df-5645-453b-b8b3-3bc1c530ae57"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="5b96af8d-ba9f-4bfa-913e-be867c11f92d"
+                LastKnownName="浏览器"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="256cd0ba-e533-4b10-ba8a-cd0a1415c016"
+            name="ExecutionOccurrenceSpecification10">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="1ad7cfa8-66b1-4df2-9cbb-810d1e52a8fb"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelingProject1.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="92cfb755-4c83-4b7e-b024-595a30cedeb7"
+                LastKnownName="WEB API"
+                LastKnownLocation="ModelingProject1.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="5b96af8d-ba9f-4bfa-913e-be867c11f92d"
+            name="浏览器"
+            isActor="false"
+            lifelineDisplayName="‎浏览器‎">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="7039e9a6-47c8-42b3-a04f-bfa7beacf571"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="ModelingProject1.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="2a3da388-548b-494d-9975-1ef3eaeba7ef"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="ModelingProject1.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="3e21a334-e411-4b9a-a963-7eb3c2ee0f4a"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="ModelingProject1.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="dd8f8a38-eed5-456d-a17c-87afe9db7874"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="ModelingProject1.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9e77100b-aa4e-401d-bed0-58a9dc6279d9"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="ModelingProject1.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="92659bb8-69ca-4d92-a9bd-38ee31caa2e5"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="ModelingProject1.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="15f57954-011a-458d-bf17-80b7a05396ea"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="ModelingProject1.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="2300a2df-5645-453b-b8b3-3bc1c530ae57"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="ModelingProject1.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="d887514c-bcff-4e58-a3be-438198e1295f"
+            name="CRM系统"
+            isActor="false"
+            lifelineDisplayName="‎CRM系统‎">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="95358809-462e-42ed-96ec-5e4dac91829f"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="ModelingProject1.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="bd256b5c-fd6e-4556-80b1-b248f44f3f5e"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="ModelingProject1.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="2f9a0034-b8f4-46eb-8f00-b0d92432b1cd"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="ModelingProject1.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="3f33446d-0eee-4796-aa5d-80f67ee7b218"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="ModelingProject1.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="92cfb755-4c83-4b7e-b024-595a30cedeb7"
+            name="WEB API"
+            isActor="false"
+            lifelineDisplayName="WEB API">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="767108da-fba1-476c-95db-3e82c2b36fd2"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="ModelingProject1.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="4c968377-984f-414f-979a-b061f2cf28ce"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="ModelingProject1.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="3570ee19-a1de-4e6b-9ecf-ee473b77423a"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="ModelingProject1.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="256cd0ba-e533-4b10-ba8a-cd0a1415c016"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="ModelingProject1.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="d79e3a24-0a96-4532-9786-a9894becddd5"
+            name="获取登陆网页内容"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7039e9a6-47c8-42b3-a04f-bfa7beacf571"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="ModelingProject1.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e8aaa3e6-7c0a-4cda-a182-a6d1de1e3e59"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="ModelingProject1.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="6f48c0a0-0c77-4e5f-9345-ae9ac241b4a3"
+            name="返回登陆网页内容"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ff709909-e3db-45a2-bc17-20040c3e7f33"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="ModelingProject1.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2a3da388-548b-494d-9975-1ef3eaeba7ef"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="ModelingProject1.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="a3b4f8e9-b964-40fe-b125-ddb16a939a8e"
+            name="根据用户名密码请求调用API的AccessToken，并执行登陆"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="3e21a334-e411-4b9a-a963-7eb3c2ee0f4a"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="ModelingProject1.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c0bdcde9-3ea7-43b1-8c9f-25f01c39a739"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="ModelingProject1.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="f4f9055d-e9df-4cd3-a45b-97937c9aebac"
+            name="返回登陆结果,并返回AccessToken与RefreshToken,保存在本地"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d7875155-1025-4abf-bbad-13f873972d6c"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="ModelingProject1.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="dd8f8a38-eed5-456d-a17c-87afe9db7874"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="ModelingProject1.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="36c12db5-c6c4-446b-838e-c5fabc076690"
+            name="用户请求新的网页"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9e77100b-aa4e-401d-bed0-58a9dc6279d9"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="ModelingProject1.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="599f23b1-eb54-4bbb-bb60-4030fd5a4526"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="ModelingProject1.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="160bbf80-0a5a-4958-b4e9-e4b85de0e0bf"
+            name="返回网页内容"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="50a9b147-b7e5-48cd-a0e6-e76b791439d8"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="ModelingProject1.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="92659bb8-69ca-4d92-a9bd-38ee31caa2e5"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="ModelingProject1.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="b7e99f6a-259e-4f09-81fe-aa0f3a758921"
+            name="根据网页中的脚本获取数据并带入AccessToken"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="15f57954-011a-458d-bf17-80b7a05396ea"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="ModelingProject1.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="85fc2f3f-18be-4db1-a1de-920854832ce6"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="ModelingProject1.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="6c4e1e6e-b0e1-44bf-b7a8-c8b7f0f8a34a"
+            name="验证AccessToken是否过期，未过期反回需求数据，否则提醒登陆过期并重新登陆；或用RefreshToken获取新的AccessToken"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9567d5bf-a8b3-4cf5-a4e3-5cffabcc0f0f"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="ModelingProject1.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2300a2df-5645-453b-b8b3-3bc1c530ae57"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="ModelingProject1.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="aaadaa06-90d0-418a-9655-be398728617f"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="e97382ba-0afa-461d-af00-bfb3935b9d3e"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="112fabdd-29f5-4ee4-85fb-e4b00f054926"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ac442445-91d7-47a6-a1d0-bcba534a696a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="2ef83abd-212e-4cb5-a005-e5c67c3dfa87"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="c7ac4208-acbe-4c8a-a027-ab710badcf78"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f12f9043-5ec9-42f4-bc7d-7cc93a55bb22"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="1ad7cfa8-66b1-4df2-9cbb-810d1e52a8fb"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="7a19dc59-a07d-4b52-b03f-dbfa1dd40fea"
+        name="DbContext"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="0b37c960-2374-4eba-b573-26b64c44adb7"
+        name="Interface2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="69c882c0-a07f-47dd-aea3-3d14b8728340"
+        name="DomainService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="6a62f1d9-fb1c-4973-ab87-22b2446fd11e">
+            <componentMoniker
+              Id="4a9205ef-6c06-4f2a-9aa9-18e5fe5323aa"
+              LastKnownName="ApplicationDbContext"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <providedInterface
+            Id="eb9a248c-4359-4834-8dc2-2077c4ac7be0"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="ad5d4f46-842b-40ef-aa34-608356f09655"
+                LastKnownName="IDomainService"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface
+            Id="1a0769c6-ee62-4bbe-a28d-3ea7bac1b9a3"
+            name="Port2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="66ddbf57-42b4-4360-a925-961bc71718f2"
+                LastKnownName="DbContext"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface
+            Id="ee3a3d10-9a92-4ece-9da1-008cf79527c7"
+            name="Port3"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="864ce69f-48fc-4bef-9cec-4a05ec4acc6c"
+                LastKnownName="ICache"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="ddd69b22-d59a-431a-b365-d77d90a6e082"
+        name="DbContext"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="951dc3ae-df58-46ff-9cc6-90b9ba42315b"
+        name="IDomainService"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="e59b5a7c-8a95-41e6-a0ab-2ef6f56afd65"
+        name="DomainService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="99e5f238-7704-45eb-acde-2afe4398ed94">
+            <componentMoniker
+              Id="4a9205ef-6c06-4f2a-9aa9-18e5fe5323aa"
+              LastKnownName="ApplicationDbContext"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="87742fbc-a7c4-44a7-9de8-900103520adf"
+            name="Port2"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="2a6e514b-8ef1-4177-9832-e9bf8a6f106f"
+                LastKnownName="DbContext"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="40f7a0c9-96bd-4c84-9ec0-898e55c11530"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="2a6e514b-8ef1-4177-9832-e9bf8a6f106f"
+        name="DbContext"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="5aeffd31-a417-4b0a-9698-0dd41526f9e0"
+        name="WEB API"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="e6fb1f0d-b4d8-4ff3-9516-5437f87781a4">
+            <componentMoniker
+              Id="69c882c0-a07f-47dd-aea3-3d14b8728340"
+              LastKnownName="DomainService"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+          <dependency
+            Id="2e44028f-5662-4774-904b-7e8bbad52728">
+            <componentMoniker
+              Id="e59b5a7c-8a95-41e6-a0ab-2ef6f56afd65"
+              LastKnownName="DomainService"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="70852971-cc36-49ca-be16-a38b38460ee9"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="b4a619c6-b8a3-40c9-b777-530a4717788d"
+                LastKnownName="IDomainService"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b4a619c6-b8a3-40c9-b777-530a4717788d"
+        name="IDomainService"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="ad5d4f46-842b-40ef-aa34-608356f09655"
+        name="IDomainService"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="29a3f689-88c4-46f2-987a-62ea2344b261"
+        name="DbContext"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="412a8740-ed7f-40a7-9c93-33dc2f79fd97"
+        name="Interface3"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="66ddbf57-42b4-4360-a925-961bc71718f2"
+        name="DbContext"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <component
+        Id="7a07fdb7-ea47-42db-abcc-2c4ee794ba4d"
+        name="Cache"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <requiredInterface
+            Id="ba64c82f-9150-4ceb-a002-6d173c8e42da"
+            name="Port1"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false"
+            isService="false"
+            isBehavior="false">
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="747aebc5-066b-48e9-aac1-20178c648215"
+                LastKnownName="ICache"
+                LastKnownLocation="ModelingProject1.uml" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="747aebc5-066b-48e9-aac1-20178c648215"
+        name="ICache"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="864ce69f-48fc-4bef-9cec-4a05ec4acc6c"
+        name="ICache"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="f45fc179-bf54-4653-b3d4-ae34ade124de"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <objectNode
+            Id="f7434c1b-cbdd-4b51-ab37-cf8488df035c"
+            name="PRG 防止重复数据提交"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="1d30d8d9-a251-4651-8570-0c0eff788ddc"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="a0da3698-3d4d-4c75-abf0-728625da6df5"
+            name="AutoMap"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="b0293661-9988-4a55-8773-f91c9934af55"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="59c979ab-9e10-4776-844c-a2a8316d067c"
+            name="ViewModel"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="f122351b-5a4f-41b7-bac5-b56ae25dd1a6"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="1a083a5a-7221-4bd8-92f4-69146e446fe2"
+            name="DomainModel"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="954345aa-b79a-4f46-bad5-f2f5caf07575"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

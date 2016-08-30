@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm12="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="ad5ca03c-e263-4877-9938-c7fc9ae8c4ab" name="Activity1" linkedPackageId="37572235-8801-4ad1-a0bd-871b8d0e9ca9" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="41cffcbf-9a24-4884-a495-122bc61deb6d">
+      <profileInstance Id="9c5e84f8-f15e-4746-abee-d9d4629b2543" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a366ad11-de90-4511-a761-b6a24b8f5ad6">
+      <profileInstance Id="803fa703-a2a5-4d54-9811-19ece324ee46" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="9585793a-575a-4da8-a09f-e3c25dbc285a" name="Activity1" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="f45fc179-bf54-4653-b3d4-ae34ade124de" />
+        <nodes>
+          <objectNode Id="9e1f9204-7d34-4a86-a732-ef8ae63a73e8" name="PRG 防止重复数据提交" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="f7434c1b-cbdd-4b51-ab37-cf8488df035c" />
+            <upperBound>
+              <literalInteger Id="08d02e47-183a-4e15-894c-855c7b48c99b" name="2147483647" value="2147483647">
+                <elementDefinition Id="1d30d8d9-a251-4651-8570-0c0eff788ddc" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="11c0df98-22da-4fb5-b59e-a048f176ab2e" name="AutoMap" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="a0da3698-3d4d-4c75-abf0-728625da6df5" />
+            <upperBound>
+              <literalInteger Id="1fda5d01-2bd6-44a6-869b-283495a912da" name="2147483647" value="2147483647">
+                <elementDefinition Id="b0293661-9988-4a55-8773-f91c9934af55" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="400d5e67-08e0-4b7b-9bc2-ceb0e5e7581f" name="ViewModel" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="59c979ab-9e10-4776-844c-a2a8316d067c" />
+            <upperBound>
+              <literalInteger Id="d8e27204-76a8-4878-8676-86e01dd9ea2d" name="2147483647" value="2147483647">
+                <elementDefinition Id="f122351b-5a4f-41b7-bac5-b56ae25dd1a6" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <objectNode Id="52fd79ca-55f9-4652-afa1-f3c0888efe06" name="DomainModel" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="1a083a5a-7221-4bd8-92f4-69146e446fe2" />
+            <upperBound>
+              <literalInteger Id="b5f0323c-a1c6-4924-a15c-07cb20ca4ea7" name="2147483647" value="2147483647">
+                <elementDefinition Id="954345aa-b79a-4f46-bad5-f2f5caf07575" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="37572235-8801-4ad1-a0bd-871b8d0e9ca9" name="ModelingProject1">
+    <elementDefinition Id="d049cac3-706b-4af7-b376-32ee2e8c16d0" />
+  </package>
+</activityRootModel>

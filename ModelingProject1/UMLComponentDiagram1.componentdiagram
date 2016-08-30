@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm13="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="cde63473-a757-41e0-9a86-0417a372e07f" name="UMLComponentDiagram1" linkedPackageId="2542cfa0-30b1-4c6d-9c6c-ecd0bd579fb6" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="4f385a33-2925-44cb-97c0-08e14257dbfc">
+      <profileInstance Id="2c28554c-457b-4b16-a6a9-995e40ad0254" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="6b98065d-0525-4197-8418-74fa066c9fab">
+      <profileInstance Id="134b2518-822f-4d14-8297-878171a68059" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="ca5303c2-ddb3-4d61-b4f4-06d3f9f9031f" name="ApplicationDbContext" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4a9205ef-6c06-4f2a-9aa9-18e5fe5323aa" />
+        <ownedAttributesInternal>
+          <providedInterface Id="7944997e-06f8-4483-97a1-743f822f26d8" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="2e873c98-5d97-40cc-bbd6-8f85b1ee1811" />
+            <type_NamedElement>
+              <interfaceMoniker Id="fa67a6c9-99f6-4392-bc1d-3e1566e4070d" LastKnownName="DbContext" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="af83ae31-40d1-4ece-8fd2-4dd84b22442f" name="DomainService" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="69c882c0-a07f-47dd-aea3-3d14b8728340" />
+        <suppliersInternal>
+          <dependency Id="4c69f966-e382-4729-aafa-d35cff1de045">
+            <componentMoniker Id="ca5303c2-ddb3-4d61-b4f4-06d3f9f9031f" LastKnownName="ApplicationDbContext" />
+            <elementDefinition Id="6a62f1d9-fb1c-4973-ab87-22b2446fd11e" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <providedInterface Id="bc7f5d48-2d37-4945-be0d-600752d2e035" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="eb9a248c-4359-4834-8dc2-2077c4ac7be0" />
+            <type_NamedElement>
+              <interfaceMoniker Id="60543f89-0026-4ddd-91c0-7a70b7503de3" LastKnownName="IDomainService" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface Id="b4503be1-2a2f-40a0-b488-c2eb981fd557" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="1a0769c6-ee62-4bbe-a28d-3ea7bac1b9a3" />
+            <type_NamedElement>
+              <interfaceMoniker Id="b3fb3d11-7d2c-46d0-8528-58ce753f5cb3" LastKnownName="DbContext" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface Id="76371a80-4748-4f1a-a0d0-3d3bbdf63a59" name="Port3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="ee3a3d10-9a92-4ece-9da1-008cf79527c7" />
+            <type_NamedElement>
+              <interfaceMoniker Id="c09585fb-c689-4d73-b6f9-6f7e2630f08c" LastKnownName="ICache" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="51950a53-8e4e-4b93-97f4-d38c043307e1" name="WEB API" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5aeffd31-a417-4b0a-9698-0dd41526f9e0" />
+        <suppliersInternal>
+          <dependency Id="860e6269-ab1b-40d4-a9b1-85f17be1b80d">
+            <componentMoniker Id="af83ae31-40d1-4ece-8fd2-4dd84b22442f" LastKnownName="DomainService" />
+            <elementDefinition Id="e6fb1f0d-b4d8-4ff3-9516-5437f87781a4" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <requiredInterface Id="5fc76136-bd86-4498-8f80-9f340233c75d" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="70852971-cc36-49ca-be16-a38b38460ee9" />
+            <type_NamedElement>
+              <interfaceMoniker Id="f4c81ef0-209b-4c52-887e-495fc9ca0318" LastKnownName="IDomainService" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="f4c81ef0-209b-4c52-887e-495fc9ca0318" name="IDomainService" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b4a619c6-b8a3-40c9-b777-530a4717788d" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="60543f89-0026-4ddd-91c0-7a70b7503de3" name="IDomainService" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ad5d4f46-842b-40ef-aa34-608356f09655" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="fa67a6c9-99f6-4392-bc1d-3e1566e4070d" name="DbContext" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="29a3f689-88c4-46f2-987a-62ea2344b261" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="b3fb3d11-7d2c-46d0-8528-58ce753f5cb3" name="DbContext" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="66ddbf57-42b4-4360-a925-961bc71718f2" />
+      </Interface>
+    </modelContainsNamedElements>
+    <componentModelHasComponents>
+      <component Id="54cca53d-fae7-46fb-b7a3-1a4121669e20" name="Cache" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7a07fdb7-ea47-42db-abcc-2c4ee794ba4d" />
+        <ownedAttributesInternal>
+          <requiredInterface Id="91e93a8e-57e4-4cf7-9dcc-25bf3da98ae3" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="ba64c82f-9150-4ceb-a002-6d173c8e42da" />
+            <type_NamedElement>
+              <interfaceMoniker Id="7ebf7b16-70ab-458a-a4b0-eb77d2e470c3" LastKnownName="ICache" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="7ebf7b16-70ab-458a-a4b0-eb77d2e470c3" name="ICache" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="747aebc5-066b-48e9-aac1-20178c648215" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="c09585fb-c689-4d73-b6f9-6f7e2630f08c" name="ICache" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="864ce69f-48fc-4bef-9cec-4a05ec4acc6c" />
+      </Interface>
+    </modelContainsNamedElements>
+  </packagedElements>
+  <package Id="2542cfa0-30b1-4c6d-9c6c-ecd0bd579fb6" name="ModelingProject1">
+    <elementDefinition Id="d049cac3-706b-4af7-b376-32ee2e8c16d0" />
+  </package>
+</componentModel>
