@@ -25,6 +25,7 @@ namespace NJLFramework.Test
     /// </summary>
     public class SqlTxtReadTest
     {
+        #pragma warning disable 1998
         [Fact]
         public async void Read()
         {

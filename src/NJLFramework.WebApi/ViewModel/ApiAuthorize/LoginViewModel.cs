@@ -14,13 +14,19 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NJLFramework.WebApi
+namespace NJLFramework.WebApi.ViewModel.ApiAuthorize
 {
     public class LoginViewModel
     {
+        [Required(ErrorMessage = "The Username field is required.")]
+        [MaxLength(10,ErrorMessage ="无效长度")]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name ="用户名")]
         public string UserName { get; set; }
         
         public string Password { get; set; }

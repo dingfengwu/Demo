@@ -1,0 +1,26 @@
+﻿body{
+    font-size:14px;
+    font-family:'Microsoft YaHei';
+}
+
+.not-found-top{
+    height:200px;
+    background:url(images/not-found-bg.jpg) no-repeat;
+    padding:20px;
+}
+.not-found-icon{
+    height:inherit;
+    width:400px;
+    margin:0px auto;
+    background:url(images/nog-found-icon.png) no-repeat;
+    overflow:visible;
+}
+.not-found-title{
+    font-size:1.4em;
+    font-weight:bold;
+    margin-left:200px;
+    background-color:#fff;
+    border-radius:20px;
+    padding:20px;
+    line-height:30px;
+}

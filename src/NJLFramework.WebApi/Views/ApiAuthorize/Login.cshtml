@@ -1,8 +1,10 @@
 ﻿@using System.Collections.Generic
-@using Microsoft.AspNet.Http
-@using Microsoft.AspNet.Http.Authentication
-@model LoginViewModel
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@using Microsoft.AspNetCore.Mvc.Localization
+@model NJLFramework.WebApi.ViewModel.ApiAuthorize.LoginViewModel
 
+@inject IViewLocalizer _localizer
 @{
     ViewData["Title"] = "Log in";
 }
@@ -12,9 +14,9 @@
     <div class="col-md-8">
         <section>
             <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
-                <h4>Use a local account to log in.</h4>
+                <h4>@_localizer["User Label"]---@ViewData["Login_Header"]</h4>
                 <hr />
-                <div asp-validation-summary="ValidationSummary.All" class="text-danger"></div>
+                <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="UserName" class="col-md-2 control-label"></label>
                     <div class="col-md-10">

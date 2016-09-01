@@ -102,7 +102,6 @@ namespace NJLFramework.Database
 
             _logger.LogWarning(Resource.ResourceManager.GetString("WARN_BULK_ADD_MYBE_SLOW"));
 
-#if NET451 || DNX451
             if (entities.Count <= 100 * 10000)
             {
                 await ByBatchBulkAdd(connectionString, entities);
@@ -129,9 +128,6 @@ namespace NJLFramework.Database
                     await ByBatchBulkAdd(connectionString, list);
                 });
             }
-#else
-            throw new NotSupportedException(Resource.ResourceManager.GetString("ERROR_NO_SUPPORT"));
-#endif
         }
 
         /// <summary>
@@ -139,6 +135,7 @@ namespace NJLFramework.Database
         /// </summary>
         /// <param name="entities"></param>
         /// <returns></returns>
+        #pragma warning disable 1998
         protected virtual async Task ByBatchBulkAdd<TModel>(string connectionString,
             List<TModel> entities)
         {

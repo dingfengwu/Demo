@@ -20,7 +20,7 @@ namespace NJLFramework.DomainService.Permission
         private const string DEFAULT_ACCESS_TOKEN_PURPOSE = "ACCESS_TOKEN";
 
         /// <summary>
-        ///     Configure the app to use owin middleware based oauth bearer tokens
+        /// Configure the app to use owin middleware based oauth bearer tokens
         /// </summary>
         /// <param name="this"></param>
         /// <param name="options"></param>
@@ -73,10 +73,7 @@ namespace NJLFramework.DomainService.Permission
         public static void UseOAuthBearerTokens(this IApplicationBuilder @this, Action<OAuthAuthorizationServerOptions> config)
         {
             var options = new OAuthAuthorizationServerOptions();
-            if (config != null)
-            {
-                config(options);
-            }
+            config?.Invoke(options);
             @this.UseOAuthBearerTokens(options);
         }
         private class ApplicationOAuthBearerProvider : OAuthBearerAuthenticationProvider

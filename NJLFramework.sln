@@ -52,6 +52,8 @@ Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "NewProModeling", "ModelingP
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "RightAuthentication", "RightAuthentication\RightAuthentication.modelproj", "{58DBE350-5068-40C7-BC95-5734606B10F4}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NJLFramework.Localization", "NJLFramework.Localization\NJLFramework.Localization.xproj", "{686FE8B6-3666-4108-B7A5-A465FDEDF6DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BC3C2CD0-A14A-49C1-8533-8CA6BF8025B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BC3C2CD0-A14A-49C1-8533-8CA6BF8025B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3C2CD0-A14A-49C1-8533-8CA6BF8025B1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{BC3C2CD0-A14A-49C1-8533-8CA6BF8025B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC3C2CD0-A14A-49C1-8533-8CA6BF8025B1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B69ADE6A-B658-4DF9-98E2-0D73E9775C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -116,8 +119,13 @@ Global
 		{37924D39-F1A1-4912-BBC8-150B71DE2BE8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{58DBE350-5068-40C7-BC95-5734606B10F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{58DBE350-5068-40C7-BC95-5734606B10F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58DBE350-5068-40C7-BC95-5734606B10F4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{58DBE350-5068-40C7-BC95-5734606B10F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58DBE350-5068-40C7-BC95-5734606B10F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{686FE8B6-3666-4108-B7A5-A465FDEDF6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{686FE8B6-3666-4108-B7A5-A465FDEDF6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{686FE8B6-3666-4108-B7A5-A465FDEDF6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{686FE8B6-3666-4108-B7A5-A465FDEDF6DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,5 +151,6 @@ Global
 		{53319C4D-21EE-4B97-AF2F-F636D322D419} = {9A9ECA4C-94BB-4C8A-A537-D2C551E4CE42}
 		{37924D39-F1A1-4912-BBC8-150B71DE2BE8} = {CAB78BB6-213F-4351-AB99-1DAE4C733655}
 		{58DBE350-5068-40C7-BC95-5734606B10F4} = {CAB78BB6-213F-4351-AB99-1DAE4C733655}
+		{686FE8B6-3666-4108-B7A5-A465FDEDF6DE} = {1E3715F6-788A-49D0-A4FD-3830626A8242}
 	EndGlobalSection
 EndGlobal

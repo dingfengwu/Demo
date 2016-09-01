@@ -178,6 +178,11 @@ namespace NJLFramework.Base
         {
             return NoopDisposable.Instance;
         }
+        
+        public IDisposable BeginScope<TState>(TState state)
+        {
+            return NoopDisposable.Instance;
+        }
 
         public virtual bool IsEnabled(LogLevel logLevel)
         {
@@ -199,6 +204,11 @@ namespace NJLFramework.Base
             Log(logLevel,state, exception);
         }
 
+        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
+        {
+            Log(logLevel, state, exception);
+        }
+
         public void LogVerbose(string message)
         {
             Log(LogLevel.Trace, 0, null, new Exception(message), Formatter);
@@ -215,17 +225,7 @@ namespace NJLFramework.Base
         }
 
         protected abstract string Formatter(object state, Exception exception);
-
-        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDisposable BeginScope<TState>(TState state)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         private class NoopDisposable : IDisposable
         {
             public static NoopDisposable Instance = new NoopDisposable();
@@ -237,7 +237,7 @@ namespace NJLFramework.Base
         }
     }
 
-    public class TextLoggerOption : Microsoft.Extensions.OptionsModel.IOptions<TextLoggerOption>
+    public class TextLoggerOption : Microsoft.Extensions.Options.IOptions<TextLoggerOption>
     {
         public TextLoggerOption Value
         {

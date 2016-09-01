@@ -14,22 +14,26 @@
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using NJLFramework.Database;
-using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using NJLFramework.Model;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using NJLFramework.DomainService.Permission;
-using Microsoft.AspNetCore.Http;
 using NJLFramework.Base;
 using NJLFramework.Config;
-using System.IO;
+using NJLFramework.Database;
+using NJLFramework.DomainService.Permission;
+using NJLFramework.Localization.Extension;
 using NJLFramework.Middleware;
+using NJLFramework.Model;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+
 
 namespace NJLFramework.WebApi
 {
@@ -37,6 +41,7 @@ namespace NJLFramework.WebApi
     {
         public Startup()
         {
+            
         }
 
         /// <summary>
@@ -76,18 +81,38 @@ namespace NJLFramework.WebApi
                 .AddDefaultTokenProviders();
 
             services.AddPermission();
-            services.AddStore();
+            services.AddRepositories();
 
+
+            //本地化
+            //services.AddLocalization(options => options.ResourcesPath = "Resources");
+            services.AddCustomLocalization(options =>
+            {
+                options.ResourcesPath = "Resources";
+                options.AssemblyName = "NJLFramework.Localization";
+            });
             services.AddMvc(options =>
             {
                 options.Filters.Add(PermissionAuthorizeFilter<PermissionRequirement>.Default);
 
                 options.Filters.Add(typeof(GlobalException), 100);
-            });
+            })
+            .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+            .AddDataAnnotationsLocalization();
+
+
             services.AddCors();
 
             //services.AddCaching();
             //services.AddSession();
+            //services.AddOptions();
+            //services.AddDataProtection();
+            //services.AddLogging();
+            //services.AddAuthentication();
+            //services.AddAuthorization();
+
+            //services.AddScoped(typeof(OAuthBearerAuthenticationMiddleware));
+            //services.AddScoped(typeof(OAuthAuthorizationServerMiddleware));
 
             //增加注入
             services.AddSingleton(typeof(IConfigurationRoot), Configuration);
@@ -113,7 +138,7 @@ namespace NJLFramework.WebApi
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Authorize");
 
                 app.UseSecurity(new SecurityMiddlewareOption()
                 {
@@ -136,6 +161,7 @@ namespace NJLFramework.WebApi
                 //catch { }
             }
 
+
             //app.UseIISPlatformHandler();
             app.UseStaticFiles();
             app.UseRightHandler(new List<RightHandler<RightOption>>
@@ -145,8 +171,33 @@ namespace NJLFramework.WebApi
             //app.UseSession();
 
 
-            //使用OAuth服务
-            app.UseOAuthBearerTokens(options =>
+
+            //本地化，参考https://docs.asp.net/en/latest/fundamentals/localization.html#implement-a-strategy-to-select-the-language-culture-for-each-request
+            var supportedCultures = new[]
+            {
+                  new CultureInfo("zh-CN"),
+                  new CultureInfo("en-US"),
+                  //new CultureInfo("en-AU"),
+                  //new CultureInfo("en-GB"),
+                  //new CultureInfo("en"),
+                  //new CultureInfo("es-ES"),
+                  //new CultureInfo("es-MX"),
+                  //new CultureInfo("es"),
+                  //new CultureInfo("fr-FR"),
+                  //new CultureInfo("fr")
+             };
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("zh-CN"),
+                // Formatting numbers, dates, etc.
+                SupportedCultures = supportedCultures,
+                // UI strings that we have localized.
+                SupportedUICultures = supportedCultures
+            });
+
+
+            //使用OAuth2.0服务
+            /*app.UseOAuthBearerTokens(options =>
             {
                 options.TokenEndpointPath = new PathString("/Token");
                 options.AuthorizeEndpointPath = new PathString("/Authorize");
@@ -160,7 +211,7 @@ namespace NJLFramework.WebApi
 
                 //在生产模式下设 AllowInsecureHttp = false
                 options.AllowInsecureHttp = true;
-            });
+            });*/
 
             app.UseCors(string.Empty);
             app.UseMvc();

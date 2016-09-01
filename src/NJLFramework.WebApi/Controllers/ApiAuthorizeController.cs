@@ -14,11 +14,19 @@
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using NJLFramework.DomainService.Permission;
+using System.Resources;
 using System.Threading.Tasks;
+using NJLFramework.Localization.Extension;
+using NJLFramework.WebApi.ViewModel.ApiAuthorize;
+using System.Linq;
+using System.Reflection;
+using System.Globalization;
 
 namespace NJLFramework.WebApi.Controllers
 {
@@ -30,14 +38,21 @@ namespace NJLFramework.WebApi.Controllers
         private UserService _userService;
         private IHostingEnvironment _env;
         private IConfigurationRoot _config;
-
-        public ApiAuthorizeController(UserService userService,ILoggerFactory loger, 
-            IHostingEnvironment env, IConfigurationRoot config)
+        private IStringLocalizer _localizer;
+        
+        public ApiAuthorizeController(UserService userService,
+            ILoggerFactory loger, 
+            IHostingEnvironment env, 
+            IConfigurationRoot config, 
+            IStringLocalizerFactory stringLocalizerFactory,
+            IStringLocalizer<ApiAuthorizeController> controllerLocalizer)
         {
             _logger = loger.CreateLogger(nameof(AccountController));
             _userService = userService;
             _env = env;
             _config = config;
+            
+            _localizer = controllerLocalizer;
         }
         
         [HttpGet]
@@ -45,6 +60,7 @@ namespace NJLFramework.WebApi.Controllers
         public IActionResult Get(string redirect_uri = null)
         {
             ViewData["Redirect_Url"] = redirect_uri;
+            ViewData["Login_Header"] = _localizer["LOGIN_HEADER"];
             return View("Login");
         }
         
@@ -61,12 +77,12 @@ namespace NJLFramework.WebApi.Controllers
                 var user = await _userService.FindByNameAsync(model.UserName);
                 if (user == null)
                 {
-                    ModelState.AddModelError(string.Empty, Resource.ResourceManager.GetString("ERROR_USER_NO_FOUND"));
+                    ModelState.AddModelError(string.Empty, _localizer["ERROR_USER_NO_FOUND"]);
                     return View("Login");
                 }
                 if (!await _userService.CheckPasswordAsync(user, model.Password))
                 {
-                    ModelState.AddModelError(string.Empty, Resource.ResourceManager.GetString("ERROR_USER_PASSWORD_NOT_FOUND"));
+                    ModelState.AddModelError(string.Empty, _localizer["ERROR_USER_PASSWORD_NOT_FOUND"]);
                     return View("Login");
                 }
 

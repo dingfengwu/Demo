@@ -43,7 +43,12 @@ namespace NJLFramework.Base
         {
             if(modelState==null)
             {
-                return new ErrorApiResult { Result = false, ErrorCode = InnerErrorCode.MODEL_NOT_NULL, ErrorMsg = Resource.ResourceManager.GetString("MODEL_NOT_NULL") };
+                return new ErrorApiResult
+                {
+                    Result = false,
+                    ErrorCode = InnerErrorCode.MODEL_NOT_NULL,
+                    ErrorMsg = Resource.ResourceManager.GetString("MODEL_NOT_NULL")
+                };
             }
 
             StringBuilder errorBuilder = new StringBuilder();
@@ -61,7 +66,12 @@ namespace NJLFramework.Base
                     }
                 }
             }
-            return new ErrorApiResult { Result = false, ErrorCode = InnerErrorCode.MODEL_INVOLID, ErrorMsg = errorBuilder.ToString() };
+            return new ErrorApiResult
+            {
+                Result = false,
+                ErrorCode = InnerErrorCode.MODEL_INVOLID,
+                ErrorMsg = errorBuilder.ToString()
+            };
         }
 
         /// <summary>

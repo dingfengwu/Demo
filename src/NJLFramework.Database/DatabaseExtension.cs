@@ -13,16 +13,12 @@
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace NJLFramework.Database
 {
     public static class DatabaseExtension
     {
-        public static void AddStore(this IServiceCollection @this)
+        public static void AddRepositories(this IServiceCollection @this)
         {
             @this.AddScoped(typeof(ApplicationDbContext));
             @this.AddScoped(typeof(DbContext),typeof(ApplicationDbContext));

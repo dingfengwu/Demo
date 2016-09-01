@@ -34,7 +34,7 @@ namespace NJLFramework.Test
             }));
             var logger=factory.CreateLogger("Test");
 
-            logger.LogDebug(0, "Test Verbose");
+            logger.LogDebug(0, "Test Debug");
             logger.LogWarning(0, "Test Warning");
             logger.LogError(0, "Test Error");
 

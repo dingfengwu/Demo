@@ -26,6 +26,7 @@ namespace NJLFramework.Test
 {
     public class EntityframeworkRepositoryTest
     {
+        #pragma warning disable 1998
         [Fact]
         public async void TestBlukInsert()
         {

@@ -76,7 +76,7 @@ namespace NJLFramework.WebApi
                 .AddDefaultTokenProviders();
 
             services.AddPermission();
-            services.AddStore();
+            services.AddRepositories();
 
             services.AddMvc(options =>
             {

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace NJLFramework.WebApi
 {
@@ -20,7 +21,6 @@ namespace NJLFramework.WebApi
                 .Build();
 
             host.Run();
-
             
         }
     }

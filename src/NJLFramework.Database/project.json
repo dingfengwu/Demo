@@ -4,7 +4,8 @@
   "dependencies": {
     "Microsoft.EntityFrameworkCore": "1.0.0",
     "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
-    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0-beta8",
+    "Microsoft.Extensions.Configuration.Binder": "1.0.0",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
     "NETStandard.Library": "1.6.0",
     "NJLFramework.Base": "1.0.0-*",
     "NJLFramework.Config": "1.0.0-*",

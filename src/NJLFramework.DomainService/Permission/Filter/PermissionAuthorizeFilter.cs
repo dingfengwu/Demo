@@ -44,7 +44,7 @@ namespace NJLFramework.DomainService.Permission
         /// <returns></returns>
         public override async Task OnAuthorizationAsync(AuthorizationFilterContext context)
         {
-            if (!context.Filters.Any(item => item is IAllowAnonymous))
+            if (!context.Filters.Any(item => item is IAllowAnonymousFilter))
             {
                 if (!context.Filters.Any(item => item is AuthorizeFilter
                 &&(item as AuthorizeFilter).Policy.AuthenticationSchemes.Contains("Bearer")

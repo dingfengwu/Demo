@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NJLFramework.WebApi {
+namespace NJLFramework.Localization.Resources {
     using System;
     using System.Reflection;
     
@@ -22,13 +22,13 @@ namespace NJLFramework.WebApi {
     // (使用 /str 选项)，或重新生成 VS 项目。
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resource {
+    public class WebApi_en_US {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
-        internal Resource() {
+        internal WebApi_en_US() {
         }
         
         /// <summary>
@@ -38,7 +38,7 @@ namespace NJLFramework.WebApi {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NJLFramework.WebApi.Resource", typeof(Resource).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NJLFramework.Localization.Resources.WebApi-en-US", typeof(WebApi_en_US).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -87,11 +87,29 @@ namespace NJLFramework.WebApi {
         }
         
         /// <summary>
+        ///    查找与 Login 类似的本地化字符串。
+        /// </summary>
+        public static string LOGIN_HEADER {
+            get {
+                return ResourceManager.GetString("LOGIN_HEADER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///    查找与 请传入正确格式的数据 类似的本地化字符串。
         /// </summary>
         public static string MODEL_NOT_NULL {
             get {
                 return ResourceManager.GetString("MODEL_NOT_NULL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///    查找与 用户名： 类似的本地化字符串。
+        /// </summary>
+        public static string VIEWMODEL_LOGINVIEWMODEL_USERNAME {
+            get {
+                return ResourceManager.GetString("VIEWMODEL_LOGINVIEWMODEL_USERNAME", resourceCulture);
             }
         }
     }

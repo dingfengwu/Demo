@@ -13,8 +13,6 @@
 
 
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Options;
-using Microsoft.Extensions.OptionsModel;
 
 namespace NJLFramework.DomainService.Permission
 {
