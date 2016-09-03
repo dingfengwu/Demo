@@ -18,8 +18,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NJLFramework.Base;
 using NJLFramework.DomainService.Permission;
-using NJLFramework.Model;
+using NJLFramework.Model.Permission;
 using System.Threading.Tasks;
+
 
 namespace NJLFramework.WebApi.Controllers
 {
@@ -29,10 +30,10 @@ namespace NJLFramework.WebApi.Controllers
         private PermissionService _service;
         private UserService _userService;
         private ILogger _logger;
-        private SignInManager<User> _signInManager;
+        private SignInManager<Users> _signInManager;
 
         public AccountController(PermissionService service,UserService userService, 
-            ILoggerFactory loger, SignInManager<User> signInManager)
+            ILoggerFactory loger, SignInManager<Users> signInManager)
         {
             _service = service;
             _userService = userService;
@@ -56,7 +57,7 @@ namespace NJLFramework.WebApi.Controllers
             }
             else
             {
-                var user = new User() { UserName = model.UserName, Email = model.Password };
+                var user = new Users() { UserName = model.UserName, Email = model.Password };
                 IdentityResult result = await _userService.CreateAsync(user, model.Password);
                 if (!result.Succeeded)
                 {

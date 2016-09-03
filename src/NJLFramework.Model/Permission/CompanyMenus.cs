@@ -1,8 +1,9 @@
-﻿using System; 
+﻿using System;
 using System.Text;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using NJLFramework.Base;
 
 namespace NJLFramework.Model.Permission
 {
@@ -10,7 +11,7 @@ namespace NJLFramework.Model.Permission
     ///公司菜单表
     /// <summary>
     [Table("CompanyMenus")]
-    public partial class CompanyMenusInfo
+    public partial class CompanyMenus : IEntity<CompanyMenus>
     {
         #region Model
 

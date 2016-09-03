@@ -1,8 +1,10 @@
-﻿using System; 
+﻿using System;
 using System.Text;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using NJLFramework.Base;
 
 namespace NJLFramework.Model.Permission
 {
@@ -10,7 +12,7 @@ namespace NJLFramework.Model.Permission
     ///用户表
     /// <summary>
     [Table("Users")]
-    public partial class UsersInfo
+    public partial class Users:IdentityUser<Guid>,IEntity<Users>
     {
         #region Model
 
@@ -20,7 +22,7 @@ namespace NJLFramework.Model.Permission
         /// 主键
         /// </summary>	
         [Key]
-        public Guid Id
+        public override Guid Id
         {
             get { return _id; }
             set { _id = value; }
@@ -41,7 +43,7 @@ namespace NJLFramework.Model.Permission
         /// <summary>
         /// 登陆失败次数
         /// </summary>	
-        public int AccessFailedCount
+        public override int AccessFailedCount
         {
             get { return _accessFailedCount; }
             set { _accessFailedCount = value; }
@@ -51,17 +53,17 @@ namespace NJLFramework.Model.Permission
         /// <summary>
         /// 是否启用登陆失败锁定,0:不启用，1:启用
         /// </summary>	
-        public bool LockoutEnabled
+        public override bool LockoutEnabled
         {
             get { return _lockoutEnabled; }
             set { _lockoutEnabled = value; }
         }
-        private TimeSpan _lockoutEnd = TimeSpan.FromMilliseconds(0);
+        private DateTimeOffset? _lockoutEnd=DateTimeOffset.MinValue;
 
         /// <summary>
         /// 锁定时长
         /// </summary>	
-        public TimeSpan LockoutEnd
+        public override DateTimeOffset? LockoutEnd
         {
             get { return _lockoutEnd; }
             set { _lockoutEnd = value; }
@@ -71,7 +73,7 @@ namespace NJLFramework.Model.Permission
         /// <summary>
         /// 登陆邮件地址
         /// </summary>	
-        public string Email
+        public override string Email
         {
             get { return _email; }
             set { _email = value; }
@@ -81,17 +83,17 @@ namespace NJLFramework.Model.Permission
         /// <summary>
         /// 序列化过的登陆邮件地址
         /// </summary>	
-        public string NormalizedEmail
+        public override string NormalizedEmail
         {
             get { return _normalizedEmail; }
             set { _normalizedEmail = value; }
         }
-        private bool? _emailConfirmed = false;
+        private bool _emailConfirmed = false;
 
         /// <summary>
         /// 是否启用邮件地址验证,0:不启用,1:启用
         /// </summary>	
-        public bool? EmailConfirmed
+        public override bool EmailConfirmed
         {
             get { return _emailConfirmed; }
             set { _emailConfirmed = value; }
@@ -101,17 +103,17 @@ namespace NJLFramework.Model.Permission
         /// <summary>
         /// 登陆手机号码
         /// </summary>	
-        public string PhoneNumber
+        public override string PhoneNumber
         {
             get { return _phoneNumber; }
             set { _phoneNumber = value; }
         }
-        private bool? _phoneNumberConfirmed = false;
+        private bool _phoneNumberConfirmed = false;
 
         /// <summary>
         /// 是否启用手机号码验证,0:不启用，1：启用
         /// </summary>	
-        public bool? PhoneNumberConfirmed
+        public override bool PhoneNumberConfirmed
         {
             get { return _phoneNumberConfirmed; }
             set { _phoneNumberConfirmed = value; }
@@ -121,7 +123,7 @@ namespace NJLFramework.Model.Permission
         /// <summary>
         /// 用户名
         /// </summary>	
-        public string UserName
+        public override string UserName
         {
             get { return _userName; }
             set { _userName = value; }
@@ -131,7 +133,7 @@ namespace NJLFramework.Model.Permission
         /// <summary>
         /// 序列化过的用户名
         /// </summary>	
-        public string NormalizedUserName
+        public override string NormalizedUserName
         {
             get { return _normalizedUserName; }
             set { _normalizedUserName = value; }
@@ -141,7 +143,7 @@ namespace NJLFramework.Model.Permission
         /// <summary>
         /// 密码的hash码
         /// </summary>	
-        public string PasswordHash
+        public override string PasswordHash
         {
             get { return _passwordHash; }
             set { _passwordHash = value; }
@@ -151,7 +153,7 @@ namespace NJLFramework.Model.Permission
         /// <summary>
         /// 安全戳
         /// </summary>	
-        public string SecurityStamp
+        public override string SecurityStamp
         {
             get { return _securityStamp; }
             set { _securityStamp = value; }
@@ -161,7 +163,7 @@ namespace NJLFramework.Model.Permission
         /// <summary>
         /// 是否启用二因素验证,0:不启用，1;:启用
         /// </summary>	
-        public bool TwoFactorEnabled
+        public override bool TwoFactorEnabled
         {
             get { return _twoFactorEnabled; }
             set { _twoFactorEnabled = value; }
@@ -197,12 +199,12 @@ namespace NJLFramework.Model.Permission
             set { _isSysUser = value; }
         }
 
-        private byte[] _concurrencyStamp = null;
+        private string _concurrencyStamp = null;
 
         /// <summary>
         /// 并发时间戳
         /// </summary>	
-        public byte[] ConcurrencyStamp
+        public override string ConcurrencyStamp
         {
             get { return _concurrencyStamp; }
             set { _concurrencyStamp = value; }

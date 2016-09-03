@@ -1,10 +1,12 @@
 ﻿using NJLFramework.Model;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using NJLFramework.Model.Permission;
+using System;
 
 namespace NJLFramework.Database
 {
-    public partial class ApplicationDbContext : IdentityDbContext<User,Role,string>
+    public partial class ApplicationDbContext : IdentityDbContext<Users,Roles,Guid>
     {
         public ApplicationDbContext() : base()
         {

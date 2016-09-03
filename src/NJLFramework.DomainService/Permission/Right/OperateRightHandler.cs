@@ -28,7 +28,8 @@ namespace NJLFramework.DomainService.Permission
 
         public override async Task<RightAuthorizeResult> Authorize(RightAuthorizeContext context)
         {
-            string userId = "", username = "";
+            Guid userId = Guid.Empty;
+            string username = "";
             var user = context.HttpContext.User;
             foreach (var identity in user.Identities)
             {
@@ -38,7 +39,7 @@ namespace NJLFramework.DomainService.Permission
                     {
                         if (item.Type == Const.AUTHORIZE_NAME_IDENTITY_SCHEME)
                         {
-                            userId = item.Value;
+                            Guid.TryParse(item.Value, out userId);
                         }
                         else if (item.Type == Const.AUTHORIZE_NAME_SCHEME)
                         {
@@ -48,7 +49,7 @@ namespace NJLFramework.DomainService.Permission
                 }
             }
 
-            if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(username))
+            if (userId==Guid.Empty)
             {
                 throw new InvalidOperationException(Resources.EXCEPTION_USER_NOT_FOUND);
             }

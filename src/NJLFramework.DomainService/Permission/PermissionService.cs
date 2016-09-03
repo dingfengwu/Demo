@@ -19,6 +19,7 @@ using NJLFramework.Base;
 using NJLFramework.Config;
 using NJLFramework.Database;
 using NJLFramework.Model;
+using NJLFramework.Model.Permission;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -83,7 +84,7 @@ namespace NJLFramework.DomainService.Permission
         /// <param name="userId"></param>
         /// <param name="resourceId"></param>
         /// <returns></returns>
-        public Task<List<ResourcePermission>> QueryUserPermission(string userId,string resourceId)
+        public Task<List<ModulePermission>> QueryUserPermission(string userId,string resourceId)
         {
             throw new System.Exception("not impletement");
         }

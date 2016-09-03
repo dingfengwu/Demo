@@ -1,4 +1,5 @@
 {
+  "version": "1.0.0-*",
   "dependencies": {
     "Microsoft.AspNetCore.Authentication.JwtBearer": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
@@ -29,7 +30,8 @@
     "NJLFramework.Config": "1.0.0-*",
     "NJLFramework.DomainService": "1.0.0-*",
     "NJLFramework.Middleware": "1.0.0-*",
-    "NJLFramework.Localization": "1.0.0-*"
+    "NJLFramework.Localization":"1.0.0-*",
+    "NJLFramework.Model": "1.0.0-*"
   },
 
   "tools": {

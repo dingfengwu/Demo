@@ -17,6 +17,8 @@ using NJLFramework.Base;
 using NJLFramework.Config;
 using NJLFramework.DomainService.Permission;
 using NJLFramework.Model;
+using NJLFramework.Model.Permission;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using Xunit;
@@ -38,18 +40,18 @@ namespace NJLFramework.Test
             var server = helper.CreateServer();
             var dptSvr = FrameworkConfig.IocConfig.Resolve<DepartmentService>();
             var logger = FrameworkConfig.IocConfig.Resolve<ILoggerFactory>().CreateLogger(nameof(TestReadWriteSplit));
-            var id = IdGenerator.Instance.GuidToLongId().ToString();
-            dptSvr.Add(new Department
+            var id = IdGenerator.Instance.GetId();
+            dptSvr.Add(new Departments
             {
                 DepartmentType = 0,
                 Id = id,
                 Name = "Test8",
-                ParentId = "0"
+                ParentId = Guid.Empty
             });
 
             Stopwatch stop = new Stopwatch();
             stop.Start();
-            Department dpt = null;
+            Departments dpt = null;
             do
             {
                 dpt = dptSvr.Find(p => p.Id == id, useSlaveDb: true).FirstOrDefault();

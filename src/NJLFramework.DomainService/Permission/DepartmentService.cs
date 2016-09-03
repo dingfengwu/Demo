@@ -20,15 +20,16 @@ using System;
 using System.Linq.Expressions;
 using System.Linq;
 using System.Collections.Generic;
+using NJLFramework.Model.Permission;
 
 namespace NJLFramework.DomainService.Permission
 {
     public class DepartmentService: IDomainService
     {
-        EntityFrameworkRepository<Department> _entityRep;
+        EntityFrameworkRepository<Departments> _entityRep;
         ILogger _logger;
 
-        public DepartmentService(EntityFrameworkRepository<Department> entityRep,ILoggerFactory logger)
+        public DepartmentService(EntityFrameworkRepository<Departments> entityRep,ILoggerFactory logger)
         {
             _entityRep = entityRep;
             _logger = logger.CreateLogger(nameof(DomainService));
@@ -43,7 +44,7 @@ namespace NJLFramework.DomainService.Permission
         /// 增加部门
         /// </summary>
         /// <param name="dpt"></param>
-        public void Add(Department dpt)
+        public void Add(Departments dpt)
         {
             _entityRep.Add(dpt).SaveChanges();
         }
@@ -51,17 +52,17 @@ namespace NJLFramework.DomainService.Permission
         /// <summary>
         /// 查找部门
         /// </summary>
-        public List<Department> Find(Expression<Func<Department, bool>> predicate = null)
+        public List<Departments> Find(Expression<Func<Departments, bool>> predicate = null)
         {
-            return _entityRep.Find<Department>(predicate).ToList();
+            return _entityRep.Find<Departments>(predicate).ToList();
         }
 
         /// <summary>
         /// 查找部门
         /// </summary>
-        public List<Department> Find(Expression<Func<Department, bool>> predicate,bool useSlaveDb)
+        public List<Departments> Find(Expression<Func<Departments, bool>> predicate,bool useSlaveDb)
         {
-            return _entityRep.Find<Department>(predicate,useSlaveDb).ToList();
+            return _entityRep.Find<Departments>(predicate,useSlaveDb).ToList();
         }
     }
 }

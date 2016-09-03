@@ -1,0 +1,9 @@
+﻿{
+  "RedirectUrlList": [
+    "http://127.0.0.1:4000",
+    "http://10.0.169.45:4000",
+    "http://WDF:4000",
+    "http://localhost:4000"
+  ],
+  "AuthorizeErrorRedirectUrl": "http://www.kehu1688.com"
+}

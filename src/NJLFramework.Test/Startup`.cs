@@ -30,6 +30,7 @@ using NJLFramework.Base;
 using NJLFramework.Config;
 using System.IO;
 using NJLFramework.Middleware;
+using NJLFramework.Model.Permission;
 
 namespace NJLFramework.WebApi
 {
@@ -59,7 +60,7 @@ namespace NJLFramework.WebApi
                 );
 
             //标识身份验证
-            services.AddIdentity<User, IdentityRole>(options => {
+            services.AddIdentity<Users, IdentityRole>(options => {
                 options.Cookies.ApplicationCookie.AuthenticationScheme = "ApplicationCookie";
                 //options.Cookies.ApplicationCookie.DataProtectionProvider = new DataProtectionProvider(new DirectoryInfo("C:\\Github\\Identity\\artifacts"));
                 options.Cookies.ApplicationCookie.CookieName = "Interop";

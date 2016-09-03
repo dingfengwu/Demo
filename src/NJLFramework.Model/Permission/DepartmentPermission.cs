@@ -1,8 +1,9 @@
-﻿using System; 
+﻿using System;
 using System.Text;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using NJLFramework.Base;
 
 namespace NJLFramework.Model.Permission
 {
@@ -10,7 +11,7 @@ namespace NJLFramework.Model.Permission
     ///部门授权
     /// <summary>
     [Table("DepartmentPermission")]
-    public partial class DepartmentPermissionInfo
+    public partial class DepartmentPermission : IEntity<DepartmentPermission>
     {
         #region Model
 

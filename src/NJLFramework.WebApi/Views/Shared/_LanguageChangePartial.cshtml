@@ -1,0 +1,17 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer _localizer;
+
+@{
+    if (CultureInfo.CurrentUICulture.Name == "zh-CN")
+    {
+        <li><a asp-controller="ApiAuthorize" asp-action="SetLanguage" asp-route-culture="en-US">@_localizer["CHANGE_LANGUAGE"]：English</a></li>
+    }
+    else
+    {
+        <li><a asp-controller="ApiAuthorize" asp-action="SetLanguage" asp-route-culture="zh-CN">@_localizer["CHANGE_LANGUAGE"]：中文</a></li>
+    }
+}
+
+

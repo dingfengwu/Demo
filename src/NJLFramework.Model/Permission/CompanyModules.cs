@@ -1,8 +1,9 @@
-﻿using System; 
+﻿using System;
 using System.Text;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using NJLFramework.Base;
 
 namespace NJLFramework.Model.Permission
 {
@@ -10,7 +11,7 @@ namespace NJLFramework.Model.Permission
     ///公司模块管理表
     /// <summary>
     [Table("CompanyModules")]
-    public partial class CompanyModulesInfo
+    public partial class CompanyModules : IEntity<CompanyModules>
     {
         #region Model
 

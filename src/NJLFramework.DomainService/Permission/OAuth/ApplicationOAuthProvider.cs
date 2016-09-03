@@ -9,6 +9,7 @@ using NJLFramework.Model;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using NJLFramework.Model.Permission;
 
 namespace NJLFramework.DomainService.Permission
 {
@@ -51,7 +52,7 @@ namespace NJLFramework.DomainService.Permission
             var roleService = context.HttpContext.RequestServices.GetService<RoleService>();
             var optionsMgr = context.HttpContext.RequestServices.GetService<IOptions<IdentityOptions>>();
             
-            User user = await userService.FindByNameAsync(context.UserName);
+            Users user = await userService.FindByNameAsync(context.UserName);
             if (user == null)
             {
                 context.SetError("invalid_grant", Resources.Error_NotFounUserName);
@@ -63,8 +64,8 @@ namespace NJLFramework.DomainService.Permission
                 return;
             }
             
-            UserClaimsPrincipalFactory<User, Role> claimsFactory
-                = new UserClaimsPrincipalFactory<User, Role>(userService, roleService, optionsMgr);
+            UserClaimsPrincipalFactory<Users, Roles> claimsFactory
+                = new UserClaimsPrincipalFactory<Users, Roles>(userService, roleService, optionsMgr);
             var principal = await claimsFactory.CreateAsync(user);
             AuthenticationProperties properties = CreateProperties(user.UserName);
             AuthenticationTicket ticket = new AuthenticationTicket(principal, properties, OAuthDefaults.AuthenticationType);
@@ -90,15 +91,15 @@ namespace NJLFramework.DomainService.Permission
             var roleService = context.HttpContext.RequestServices.GetService<RoleService>();
             var optionsMgr = context.HttpContext.RequestServices.GetService<IOptions<IdentityOptions>>();
 
-            User user = await userService.FindByUserToken(context.ClientId);
+            Users user = await userService.FindByUserToken(context.ClientId);
             if (user == null)
             {
                 context.SetError("invalid_grant", Resources.Error_NotFounUserName);
                 return;
             }
 
-            UserClaimsPrincipalFactory<User, Role> claimsFactory
-                = new UserClaimsPrincipalFactory<User, Role>(userService, roleService, optionsMgr);
+            UserClaimsPrincipalFactory<Users, Roles> claimsFactory
+                = new UserClaimsPrincipalFactory<Users, Roles>(userService, roleService, optionsMgr);
             var principal = await claimsFactory.CreateAsync(user);
             AuthenticationProperties properties = CreateProperties(user.UserName);
             AuthenticationTicket ticket = new AuthenticationTicket(principal, properties, OAuthDefaults.AuthenticationType);

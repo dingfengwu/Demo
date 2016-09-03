@@ -18,6 +18,7 @@ using NJLFramework.Base;
 using NJLFramework.Config;
 using NJLFramework.Database;
 using NJLFramework.Model;
+using NJLFramework.Model.Permission;
 using System;
 using System.Collections.Generic;
 using Xunit;
@@ -27,6 +28,9 @@ namespace NJLFramework.Test
     public class EntityframeworkRepositoryTest
     {
         #pragma warning disable 1998
+        /// <summary>
+        /// 测试批量插入
+        /// </summary>
         [Fact]
         public async void TestBlukInsert()
         {
@@ -35,18 +39,18 @@ namespace NJLFramework.Test
             var loggerFactory = testHelper.Builder.ApplicationServices.GetService<ILoggerFactory>();
             using (ApplicationDbContext context = FrameworkConfig.IocConfig.Resolve<ApplicationDbContext>())
             {
-                var entities = new List<Department>();
+                var entities = new List<Departments>();
                 var idGenerator = FrameworkConfig.IocConfig.Resolve<IdGenerator>();
-                EntityFrameworkRepository<Department> rep = new EntityFrameworkRepository<Department>(context, loggerFactory);
+                EntityFrameworkRepository<Departments> rep = new EntityFrameworkRepository<Departments>(context, loggerFactory);
 
                 for (var i = 0; i < 1000000; i++)
                 {
-                    entities.Add(new Department
+                    entities.Add(new Departments
                     {
-                        Id = idGenerator.GuidToLongId().ToString(),
+                        Id = idGenerator.GetId(),
                         DepartmentType = 1,
                         Name = "Dpt" + i.ToString(),
-                        ParentId=""
+                        ParentId = Guid.Empty
                     });
                 }
 
@@ -57,24 +61,6 @@ namespace NJLFramework.Test
 #endif
             }
         }
-
-        [Fact]
-        public void TestNoPropertyEntity()
-        {
-            var testHelper = new TestHelper();
-            testHelper.CreateServer();
-            var loggerFactory = testHelper.Builder.ApplicationServices.GetService<ILoggerFactory>();
-            using (ApplicationDbContext context = FrameworkConfig.IocConfig.Resolve<ApplicationDbContext>())
-            {
-                context.Set<TableView>().Add(new TableView
-                {
-                    Id = IdGenerator.Instance.GuidToLongId().ToString(),
-                    Authorize=true,
-                    FLName="测试",
-                    Name="Test"
-                });
-                context.SaveChanges();
-            }
-        }
+        
     }
 }

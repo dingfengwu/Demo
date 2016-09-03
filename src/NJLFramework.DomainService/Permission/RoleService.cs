@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using NJLFramework.Base;
 using NJLFramework.Model;
+using NJLFramework.Model.Permission;
 using System.Collections.Generic;
 
 namespace NJLFramework.DomainService.Permission
@@ -24,10 +25,10 @@ namespace NJLFramework.DomainService.Permission
     /// <summary>
     /// 角色管理
     /// </summary>
-    public class RoleService:RoleManager<Role>, IDomainService
+    public class RoleService:RoleManager<Roles>, IDomainService
     {
         public RoleService(ApplicationRoleStore store,
-            IEnumerable<IRoleValidator<Role>> validator,
+            IEnumerable<IRoleValidator<Roles>> validator,
             ILookupNormalizer normalizer,
             IdentityErrorDescriber errorDescriber,
             ILogger<RoleService> logger,

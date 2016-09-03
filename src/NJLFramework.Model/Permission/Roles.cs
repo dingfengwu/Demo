@@ -1,8 +1,10 @@
-﻿using System; 
+﻿using System;
 using System.Text;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using NJLFramework.Base;
 
 namespace NJLFramework.Model.Permission
 {
@@ -10,7 +12,7 @@ namespace NJLFramework.Model.Permission
     ///角色表
     /// <summary>
     [Table("Roles")]
-    public partial class RolesInfo
+    public partial class Roles:IdentityRole<Guid>,IEntity<Roles>
     {
         #region Model
 

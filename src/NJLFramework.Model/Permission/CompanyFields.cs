@@ -11,7 +11,7 @@ namespace CRMWeb_Model.Permission
     ///公司字段管理表
     /// <summary>
     [Table("CompanyFields")]
-    public partial class CompanyFieldsInfo:IEntity<CompanyFieldsInfo>
+    public partial class CompanyFields:IEntity<CompanyFields>
     {
         #region Model
 

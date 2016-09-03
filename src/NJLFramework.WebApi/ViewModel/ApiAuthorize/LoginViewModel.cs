@@ -23,14 +23,16 @@ namespace NJLFramework.WebApi.ViewModel.ApiAuthorize
 {
     public class LoginViewModel
     {
-        [Required(ErrorMessage = "The Username field is required.")]
-        [MaxLength(10,ErrorMessage ="无效长度")]
-        [DataType(DataType.EmailAddress)]
-        [Display(Name ="用户名")]
+        [Required(ErrorMessage = "LOGIN_USERNAME_REQUIRED")]
+        [MaxLength(10,ErrorMessage ="LOGIN_USERNAME_TOO_LONG")]
+        [DataType(DataType.Text)]
+        [Display(Name ="LOGIN_USERNAME_LABEL")]
         public string UserName { get; set; }
-        
-        public string Password { get; set; }
 
-        public bool RememberMe { get; set; }
+        [Required(ErrorMessage = "LOGIN_PASSWORD_REQUIRED")]
+        [StringLength(16,MinimumLength =6,ErrorMessage = "LOGIN_PASSWORD_LENGTH_INVALID")]
+        [DataType(DataType.Password)]
+        [Display(Name = "LOGIN_PASSWORD_LABEL")]
+        public string Password { get; set; }
     }
 }

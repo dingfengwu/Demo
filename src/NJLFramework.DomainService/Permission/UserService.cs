@@ -24,20 +24,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NJLFramework.Model.Permission;
 
 namespace NJLFramework.DomainService.Permission
 {
     /// <summary>
     /// 用户管理 
     /// </summary>
-    public class UserService : UserManager<User>, IDomainService
+    public class UserService : UserManager<Users>, IDomainService
     {
         private ApplicationUserStore _store;
         public UserService(ApplicationUserStore store,
             Microsoft.Extensions.Options.IOptions<IdentityOptions> optionAccessor,
-            IPasswordHasher<User> passwordHasher,
-            IEnumerable<IUserValidator<User>> userValidator,
-            IEnumerable<IPasswordValidator<User>> passwordValidator,
+            IPasswordHasher<Users> passwordHasher,
+            IEnumerable<IUserValidator<Users>> userValidator,
+            IEnumerable<IPasswordValidator<Users>> passwordValidator,
             ILookupNormalizer normalizer,
             IdentityErrorDescriber errorDescriber,
             IServiceProvider serviceProvider,
@@ -48,11 +49,11 @@ namespace NJLFramework.DomainService.Permission
         {
             Options = optionAccessor?.Value??new IdentityOptions();
             PasswordHasher = passwordHasher;
-
+            
             _store = store;
         }
 
-        public IPasswordHasher<User> PasswordHasher { get;private set; }
+        public IPasswordHasher<Users> PasswordHasher { get;private set; }
 
         public IdentityOptions Options { get; private set; }
 
@@ -74,7 +75,7 @@ namespace NJLFramework.DomainService.Permission
         /// <example>
         /// 
         /// </example>
-        public Task<User> FindByUserToken(string clientId)
+        public Task<Users> FindByUserToken(string clientId)
         {
             if(string.IsNullOrWhiteSpace(clientId))
             {
@@ -91,9 +92,10 @@ namespace NJLFramework.DomainService.Permission
         /// <param name="userId">用户Id</param>
         /// <param name="queryCache">是否使用缓存</param>
         /// <returns></returns>
-        public Task<User> FindUserById(string userId, bool queryCache = true)
+        public Task<Users> FindUserById(Guid userId, bool queryCache = true)
         {
-            //queryCache is true   to do:
+            //queryCache is true   
+            //to do:
 
             var user = _store.Users.Where(p => p.Id == userId).FirstOrDefault();
             return Task.FromResult(user);
