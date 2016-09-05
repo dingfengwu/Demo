@@ -59,6 +59,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{32C16229-3792-4211-B650-6E89336CFEDE}"
 	ProjectSection(SolutionItems) = preProject
 		Document\框架表设计.sql = Document\框架表设计.sql
+		..\..\文档\框架表设计_数据.sql = ..\..\文档\框架表设计_数据.sql
+		..\..\文档\框架表设计_视图.sql = ..\..\文档\框架表设计_视图.sql
 		Document\框架设计规范.doc = Document\框架设计规范.doc
 		Document\表说明.doc = Document\表说明.doc
 	EndProjectSection
