@@ -1,9 +1,20 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
+﻿/*----------------------------------------------------------------
+// Copyright (C) 2016 kehu1688.com
+// 版权所有。
+//
+// 文件功能描述：
+// 实体类
+// 此文件是代码生成器生成的代码，最好不要在此上面做修改，可以建立分部类作修改.
+//
+// 创建人  ：WZJ
+// 创建日期：2016-09-23
+//----------------------------------------------------------------*/
+
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using NJLFramework.Base;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using NJLFramework.Base;
 
 namespace NJLFramework.Model.Permission
 {
@@ -15,48 +26,28 @@ namespace NJLFramework.Model.Permission
     {
         #region Model
 
-        private Guid _roleId = Guid.Empty;
+        /// <summary>
+        /// 联合主键
+        /// </summary>	
+        [Key]
+        public Guid RoleId { get; set; } = Guid.Empty;
 
         /// <summary>
         /// 联合主键
         /// </summary>	
         [Key]
-        public Guid RoleId
-        {
-            get { return _roleId; }
-            set { _roleId = value; }
-        }
-        private Guid _userId = Guid.Empty;
-
-        /// <summary>
-        /// 联合主键
-        /// </summary>	
-        [Key]
-        public Guid UserId
-        {
-            get { return _userId; }
-            set { _userId = value; }
-        }
-        private Guid _createUserId = Guid.Empty;
+        public Guid UserId { get; set; } = Guid.Empty;
 
         /// <summary>
         /// 创建用户Id,对应Users的Id
         /// </summary>	
-        public Guid CreateUserId
-        {
-            get { return _createUserId; }
-            set { _createUserId = value; }
-        }
-        private DateTime _createTime = DateTime.Parse("1900-01-01");
+        public Guid CreateUserId { get; set; } = Guid.Empty;
 
         /// <summary>
         /// 创建时间
         /// </summary>	
-        public DateTime CreateTime
-        {
-            get { return _createTime; }
-            set { _createTime = value; }
-        }
+        public DateTime CreateTime { get; set; } = DateTime.Parse("1900-01-01");
+
 
         #endregion Model
     }

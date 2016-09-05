@@ -292,7 +292,14 @@ namespace NJLFramework.Database
         public IEnumerable<TModel> Find<TModel>(Expression<Func<TModel, bool>> predicate) 
             where TModel : class, IEntity<TModel>, new()
         {
-            return DbContext.Set<TModel>().Where(predicate).AsQueryable();
+            if (predicate == null)
+            {
+                return DbContext.Set<TModel>().AsQueryable();
+            }
+            else
+            {
+                return DbContext.Set<TModel>().Where(predicate).AsQueryable();
+            }
         }
 
         /// <summary>
@@ -309,11 +316,25 @@ namespace NJLFramework.Database
             if (useSlaveDb)
             {
                 CreateReadonlyDbContext();
-                return ReadonlyDbContext.Set<TModel>().Where(predicate).AsQueryable();
+                if (predicate == null)
+                {
+                    return ReadonlyDbContext.Set<TModel>().AsQueryable();
+                }
+                else
+                {
+                    return ReadonlyDbContext.Set<TModel>().Where(predicate).AsQueryable();
+                }
             }
             else
             {
-                return DbContext.Set<TModel>().Where(predicate).AsQueryable();
+                if (predicate == null)
+                {
+                    return DbContext.Set<TModel>().AsQueryable();
+                }
+                else
+                {
+                    return DbContext.Set<TModel>().Where(predicate).AsQueryable();
+                }
             }
         }
     }

@@ -27,6 +27,19 @@ namespace NJLFramework.Base
     {
         static object _lock = new object();
         static IdGenerator _instance;
+
+        /// <summary>
+        /// 获取并发戳
+        /// </summary>
+        /// <returns></returns>
+        public string GetCurrencyStamp()
+        {
+            var circleTime = new DateTime(1970, 01, 01, 0, 0, 0, DateTimeKind.Utc);
+            var now = DateTime.Now.ToUniversalTime();
+            var ticket = (now - circleTime).TotalMilliseconds;
+            return ticket.ToString();
+        }
+
         /// <summary>
         /// 生成唯一Id
         /// </summary>

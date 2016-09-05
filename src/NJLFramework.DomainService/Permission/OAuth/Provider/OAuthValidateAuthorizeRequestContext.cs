@@ -9,9 +9,6 @@ namespace NJLFramework.DomainService.Permission
     /// </summary>
     public class OAuthValidateAuthorizeRequestContext : BaseValidatingContext<OAuthAuthorizationServerOptions>
     {
-        private Microsoft.AspNetCore.Http.HttpContext context;
-        private OAuthAuthorizationServerOptions options;
-        
         /// <summary>
         /// Initializes a new instance of the <see cref="OAuthValidateAuthorizeRequestContext"/> class
         /// </summary>

@@ -19,7 +19,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NJLFramework.WebApi.ViewModel.ApiAuthorize
+namespace NJLFramework.Model.Permission.ViewModels
 {
     public class LoginViewModel
     {

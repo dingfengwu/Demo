@@ -14,8 +14,8 @@
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
@@ -23,19 +23,19 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using NJLFramework.Base;
 using NJLFramework.Config;
 using NJLFramework.Database;
 using NJLFramework.DomainService.Permission;
 using NJLFramework.Localization.Extension;
 using NJLFramework.Middleware;
-using NJLFramework.Model;
 using NJLFramework.Model.Permission;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-
+using System.Text.Encodings.Web;
 
 namespace NJLFramework.WebApi
 {
@@ -67,7 +67,7 @@ namespace NJLFramework.WebApi
                 );
 
             //标识身份验证
-            services.AddIdentity<Users, Roles>(/*options => {
+            services.AddIdentity<Users, Roles>(options => {
                 options.Cookies.ApplicationCookie.AuthenticationScheme = "ApplicationCookie";
                 //options.Cookies.ApplicationCookie.DataProtectionProvider = new DataProtectionProvider(new DirectoryInfo("C:\\Github\\Identity\\artifacts"));
                 options.Cookies.ApplicationCookie.CookieName = "Interop";
@@ -76,11 +76,12 @@ namespace NJLFramework.WebApi
                 options.Password.RequiredLength = 6;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
 
-                options.User.AllowedUserNameCharacters = null;
-                // "abcdefghijklmnopqrstuvwxyz0123456789";
-            }*/)
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                options.User.AllowedUserNameCharacters =
+                "abcdefghijklmnopqrstuvwxyz0123456789_.@";
+            })
+                //.AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddPermission();
@@ -116,11 +117,12 @@ namespace NJLFramework.WebApi
 
             //services.AddScoped(typeof(OAuthBearerAuthenticationMiddleware));
             //services.AddScoped(typeof(OAuthAuthorizationServerMiddleware));
-
-
+            
             //增加注入
             services.AddSingleton(typeof(IConfigurationRoot), Configuration);
             services.AddSingleton(typeof(IPasswordHasher<>), typeof(PasswordHasher<>));
+            services.AddSingleton(typeof(OAuthBearerAuthenticationOptions));
+            services.AddTransient(typeof(UrlEncoder));
 
             Register.RegisterService(services);
             return Register.Get<IServiceProvider>();
@@ -203,7 +205,7 @@ namespace NJLFramework.WebApi
 
 
             //使用OAuth2.0服务
-            /*app.UseOAuthBearerTokens(options =>
+            app.UseOAuthBearerTokens(options =>
             {
                 options.TokenEndpointPath = new PathString("/Token");
                 options.AuthorizeEndpointPath = new PathString("/Authorize");
@@ -217,7 +219,7 @@ namespace NJLFramework.WebApi
 
                 //在生产模式下设 AllowInsecureHttp = false
                 options.AllowInsecureHttp = true;
-            });*/
+            });
 
             app.UseCors(string.Empty);
             app.UseMvc();

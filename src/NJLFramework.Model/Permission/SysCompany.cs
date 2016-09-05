@@ -1,9 +1,20 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
+﻿/*----------------------------------------------------------------
+// Copyright (C) 2016 kehu1688.com
+// 版权所有。
+//
+// 文件功能描述：
+// 实体类
+// 此文件是代码生成器生成的代码，最好不要在此上面做修改，可以建立分部类作修改.
+//
+// 创建人  ：WZJ
+// 创建日期：2016-09-23
+//----------------------------------------------------------------*/
+
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using NJLFramework.Base;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using NJLFramework.Base;
 
 namespace NJLFramework.Model.Permission
 {
@@ -15,87 +26,47 @@ namespace NJLFramework.Model.Permission
     {
         #region Model
 
-        private Guid _id = Guid.Empty;
-
         /// <summary>
         /// 主键
         /// </summary>	
         [Key]
-        public Guid Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-        private string _name = string.Empty;
+        public Guid Id { get; set; } = Guid.Empty;
 
         /// <summary>
         /// 公司名
         /// </summary>	
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-        private string _license = string.Empty;
+        public string Name { get; set; } = string.Empty;
 
         /// <summary>
         /// 授权码
         /// </summary>	
-        public string License
-        {
-            get { return _license; }
-            set { _license = value; }
-        }
-        private string _tel = string.Empty;
+        public string License { get; set; } = string.Empty;
 
         /// <summary>
         /// 电话
         /// </summary>	
-        public string Tel
-        {
-            get { return _tel; }
-            set { _tel = value; }
-        }
-        private string _fax = string.Empty;
+        public string Tel { get; set; } = string.Empty;
 
         /// <summary>
         /// 传真
         /// </summary>	
-        public string Fax
-        {
-            get { return _fax; }
-            set { _fax = value; }
-        }
-        private string _address = string.Empty;
+        public string Fax { get; set; } = string.Empty;
 
         /// <summary>
         /// 公司地址
         /// </summary>	
-        public string Address
-        {
-            get { return _address; }
-            set { _address = value; }
-        }
-        private string _domain = string.Empty;
+        public string Address { get; set; } = string.Empty;
 
         /// <summary>
         /// 域名
         /// </summary>	
-        public string Domain
-        {
-            get { return _domain; }
-            set { _domain = value; }
-        }
-        private string _remark = string.Empty;
+        public string Domain { get; set; } = string.Empty;
 
         /// <summary>
         /// 备注
         /// </summary>	
-        public string Remark
-        {
-            get { return _remark; }
-            set { _remark = value; }
-        }
+        public string Remark { get; set; } = string.Empty;
+
 
         #endregion Model
     }

@@ -19,10 +19,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace NJLFramework.Model.Permission
 {
     /// <summary>
-    ///用户表
+    ///员工表
     /// <summary>
-    [Table("Users")]
-    public partial class Users : IdentityUser<Guid>, IEntity<Users>
+    [Table("Employees")]
+    public partial class Employees : IEntity<Employees>
     {
         #region Model
 
@@ -30,102 +30,97 @@ namespace NJLFramework.Model.Permission
         /// 主键Id
         /// </summary>	
         [Key]
-        public override Guid Id { get; set; } = Guid.Empty;
+        public Guid Id { get; set; } = Guid.Empty;
 
         /// <summary>
         /// 公司Id,对应SysCompany的Id
         /// </summary>	
-        public Guid? CompanyId { get; set; } = Guid.Empty;
+        public Guid CompanyId { get; set; } = Guid.Empty;
 
         /// <summary>
-        /// 登陆失败次数
+        /// 出生日期
         /// </summary>	
-        public override int AccessFailedCount { get; set; } = 0;
+        public DateTime? Birthday { get; set; } = DateTime.Parse("1900-01-01");
 
         /// <summary>
-        /// 是否启用登陆失败锁定,0:不启用，1:启用
+        /// 工号
         /// </summary>	
-        public override bool LockoutEnabled { get; set; } = false;
+        public string Code { get; set; } = string.Empty;
 
         /// <summary>
-        /// 锁定时长
+        /// 部门Id,对应Departments的Id
         /// </summary>	
-        public override DateTimeOffset? LockoutEnd { get; set; } = new DateTimeOffset();
+        public Guid DepartmentId { get; set; } = Guid.Empty;
 
         /// <summary>
-        /// 登陆邮件地址
+        /// 性别
         /// </summary>	
-        public override string Email { get; set; } = string.Empty;
+        public int? Gender { get; set; } = 0;
 
         /// <summary>
-        /// 序列化过的登陆邮件地址
+        /// 是否离职
         /// </summary>	
-        public override string NormalizedEmail { get; set; } = string.Empty;
+        public int? IsDimission { get; set; } = 0;
 
         /// <summary>
-        /// 是否启用邮件地址验证,0:不启用,1:启用
+        /// 入职日期
         /// </summary>	
-        public override bool EmailConfirmed { get; set; } = false;
+        public DateTime? JoinDate { get; set; } = DateTime.Parse("1900-01-01");
 
         /// <summary>
-        /// 登陆手机号码
+        /// 离职日期
         /// </summary>	
-        public override string PhoneNumber { get; set; } = string.Empty;
+        public DateTime? LeaveDate { get; set; } = DateTime.Parse("1900-01-01");
 
         /// <summary>
-        /// 是否启用手机号码验证,0:不启用，1：启用
+        /// 手机号码
         /// </summary>	
-        public override bool PhoneNumberConfirmed { get; set; } = false;
+        public string MobilePhone { get; set; } = string.Empty;
 
         /// <summary>
-        /// 用户名
+        /// 姓名
         /// </summary>	
-        public override string UserName { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
 
         /// <summary>
-        /// 序列化过的用户名
+        /// 办公电话
         /// </summary>	
-        public override string NormalizedUserName { get; set; } = string.Empty;
+        public string OfficePhone { get; set; } = string.Empty;
 
         /// <summary>
-        /// 密码的hash码
+        /// 其他联系方式
         /// </summary>	
-        public override string PasswordHash { get; set; } = string.Empty;
+        public string OtherLink { get; set; } = string.Empty;
 
         /// <summary>
-        /// 安全戳
+        /// 照片
         /// </summary>	
-        public override string SecurityStamp { get; set; } = string.Empty;
+        public string Photo { get; set; } = string.Empty;
 
         /// <summary>
-        /// 是否启用二因素验证,0:不启用，1;:启用
+        /// 员工拼音简写
         /// </summary>	
-        public override bool TwoFactorEnabled { get; set; } = false;
+        public string PinYin { get; set; } = string.Empty;
 
         /// <summary>
-        /// 用户密钥
+        /// 职务Id,对应Positions的Id
         /// </summary>	
-        public string UserSecret { get; set; } = string.Empty;
+        public Guid PositionId { get; set; } = Guid.Empty;
 
         /// <summary>
-        /// token
+        /// 员工QQ
         /// </summary>	
-        public string UserToken { get; set; } = string.Empty;
+        public string QQ { get; set; } = string.Empty;
 
         /// <summary>
-        /// 是否系统用户
+        /// 员工微信
         /// </summary>	
-        public bool IsSysUser { get; set; } = false;
-
-        /// <summary>
-        /// 员工Id,对应Employees的Id
-        /// </summary>	
-        public Guid EmployeeId { get; set; } = Guid.Empty;
+        public string Weixin { get; set; } = string.Empty;
 
         /// <summary>
         /// 并发时间戳
         /// </summary>	
-        public override string ConcurrencyStamp { get; set; } = string.Empty;
+        public string ConcurrencyStamp { get; set; } = string.Empty;
 
         /// <summary>
         /// 创建用户Id,对应Users的Id
@@ -151,7 +146,8 @@ namespace NJLFramework.Model.Permission
         /// 备注
         /// </summary>	
         public string Remark { get; set; } = string.Empty;
-        
+
+
         #endregion Model
     }
 }

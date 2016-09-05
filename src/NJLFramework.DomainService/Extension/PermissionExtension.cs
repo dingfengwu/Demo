@@ -38,6 +38,7 @@ namespace NJLFramework.DomainService.Permission
             @this.AddSingleton<DepartmentService>();
 
             @this.AddSingleton<RightAuthorize>();
+            @this.AddSingleton<AccountService>();
             
             return @this;
         }

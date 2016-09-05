@@ -22,7 +22,6 @@ namespace NJLFramework.WebApi
     {
         public async void OnException(ExceptionContext context)
         {
-            context.HttpContext.Response.StatusCode = 400;
             ErrorApiResult result = new ErrorApiResult();
             result.ErrorMsg = context.Exception.Message;
             result.ErrorCode = InnerErrorCode.GLOBAL_EXCEPTION;

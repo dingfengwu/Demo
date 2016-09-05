@@ -95,7 +95,7 @@ namespace NJLFramework.Base
             context.HttpContext.Response.ContentType = "application/json;chatset=utf-8";
             context.HttpContext.Response.Headers["Cache-Control"] = "no-store";
             context.HttpContext.Response.Headers["Pragma"] = "no-cache";
-
+            
             var bytes = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(this));
             await context.HttpContext.Response.Body.WriteAsync(bytes, 0, bytes.Length);
         }

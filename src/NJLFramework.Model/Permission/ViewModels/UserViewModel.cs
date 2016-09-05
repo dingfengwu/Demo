@@ -1,4 +1,4 @@
-﻿namespace NJLFramework.WebApi
+﻿namespace NJLFramework.Model.Permission.ViewModels
 {
     public class UserViewModel
     {

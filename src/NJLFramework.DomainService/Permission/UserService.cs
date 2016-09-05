@@ -100,5 +100,15 @@ namespace NJLFramework.DomainService.Permission
             var user = _store.Users.Where(p => p.Id == userId).FirstOrDefault();
             return Task.FromResult(user);
         }
+
+        public override Task<IdentityResult> CreateAsync(Users user, string password)
+        {
+            if(user.ConcurrencyStamp.IsNullOrWhiteSpace())
+            {
+                user.ConcurrencyStamp = IdGenerator.Instance.GetCurrencyStamp();
+            }
+
+            return base.CreateAsync(user, password);
+        }
     }
 }

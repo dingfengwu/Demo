@@ -24,12 +24,11 @@ namespace NJLFramework.DomainService.Permission
         /// extension method.
         /// </summary>
         public OAuthBearerAuthenticationMiddleware(
-            RequestDelegate next,
-            IOptions<OAuthBearerAuthenticationOptions> options,
-            ILoggerFactory logger,
-            UrlEncoder encoder,
-            IDataProtectionProvider dataProtectionProvider)
-            : base(next, options,logger,encoder)
+            //IOptions<OAuthBearerAuthenticationOptions> options,
+            ILoggerFactory logger
+            //UrlEncoder encoder
+            )
+            : base(null, null,logger,null)
         {
             if (!string.IsNullOrWhiteSpace(Options.Challenge))
             {
@@ -51,8 +50,8 @@ namespace NJLFramework.DomainService.Permission
 
             if (Options.AccessTokenFormat == null)
             {
-                IDataProtector dataProtecter = dataProtectionProvider.CreateProtector("Access_Token");
-                Options.AccessTokenFormat = new TicketDataFormat(dataProtecter);
+                //IDataProtector dataProtecter = dataProtectionProvider.CreateProtector("Access_Token");
+                //Options.AccessTokenFormat = new TicketDataFormat(dataProtecter);
             }
 
             if (Options.AccessTokenProvider == null)

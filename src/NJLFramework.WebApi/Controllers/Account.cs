@@ -19,26 +19,24 @@ using Microsoft.Extensions.Logging;
 using NJLFramework.Base;
 using NJLFramework.DomainService.Permission;
 using NJLFramework.Model.Permission;
+using System;
 using System.Threading.Tasks;
-
+using System.Linq;
+using NJLFramework.Model.Permission.ViewModels;
 
 namespace NJLFramework.WebApi.Controllers
 {
     [Route("[controller]")]
     public class AccountController: Controller
     {
-        private PermissionService _service;
-        private UserService _userService;
+        private AccountService _accountService;
         private ILogger _logger;
-        private SignInManager<Users> _signInManager;
 
-        public AccountController(PermissionService service,UserService userService, 
-            ILoggerFactory loger, SignInManager<Users> signInManager)
+        public AccountController(AccountService accountService,
+            ILoggerFactory loger)
         {
-            _service = service;
-            _userService = userService;
+            _accountService = accountService;
             _logger = loger.CreateLogger(nameof(AccountController));
-            _signInManager = signInManager;
         }
 
         /// <summary>
@@ -57,11 +55,26 @@ namespace NJLFramework.WebApi.Controllers
             }
             else
             {
-                var user = new Users() { UserName = model.UserName, Email = model.Password };
-                IdentityResult result = await _userService.CreateAsync(user, model.Password);
-                if (!result.Succeeded)
+                try
                 {
-                    return GetErrorResult(result);
+                    IdentityResult result=await _accountService.Register(model);
+                    if (!result.Succeeded)
+                    {
+                        return GetErrorResult(result);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if (ex.InnerException == null)
+                    {
+                        ModelState.AddModelError("Register", ex.Message);
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("Register", ex.InnerException.Message);
+                    }
+
+                    return ErrorApiResult.FromModelState(ModelState);
                 }
             }
             return this.Good();

@@ -22,7 +22,7 @@ using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using NJLFramework.Config;
 using NJLFramework.DomainService.Permission;
-using NJLFramework.WebApi.ViewModel.ApiAuthorize;
+using NJLFramework.Model.Permission.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,23 +67,31 @@ namespace NJLFramework.WebApi.Controllers
         public async Task<IActionResult> Login([FromForm] LoginViewModel model, string redirect_uri)
         {
             ViewData["Redirect_Url"] = redirect_uri;
-            if (ModelState.IsValid)
+
+            try
             {
-                var user=await _userService.FindByNameAsync(model.UserName);
-                if (user == null)
+                if (ModelState.IsValid)
                 {
-                    ModelState.AddModelError(string.Empty, _localizer["ERROR_USER_NO_FOUND"]);
-                    return View("Login");
-                }
-                if (!await _userService.CheckPasswordAsync(user, model.Password))
-                {
-                    ModelState.AddModelError(string.Empty, _localizer["ERROR_USER_PASSWORD_NOT_FOUND"]);
-                    return View("Login");
-                }
+                    var user = await _userService.FindByNameAsync(model.UserName);
+                    if (user == null)
+                    {
+                        ModelState.AddModelError(string.Empty, _localizer["ERROR_USER_NO_FOUND"]);
+                        return View("Login");
+                    }
+                    if (!await _userService.CheckPasswordAsync(user, model.Password))
+                    {
+                        ModelState.AddModelError(string.Empty, _localizer["ERROR_USER_PASSWORD_NOT_FOUND"]);
+                        return View("Login");
+                    }
 
-                //_logger.LogInformation(new EventId(0x0001,"User Login"), "User logged in.");
+                    //_logger.LogInformation(new EventId(0x0001,"User Login"), "User logged in.");
 
-                return RedirectToReturnUrl(redirect_uri);
+                    return RedirectToReturnUrl(redirect_uri);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("Login", ex.Message);
             }
 
             return View("Login");
@@ -101,7 +109,7 @@ namespace NJLFramework.WebApi.Controllers
             var allowRedirectList = new List<string>();
             FrameworkConfig.Settings.GetSection("RedirectUrlList").Bind(allowRedirectList);
 
-            if (allowRedirectList.Any(p => p.ToLower() == redirect_uri.ToLower()))
+            if (allowRedirectList.Any(p => p.ToLower() == redirect_uri?.ToLower()))
             {
                 return Redirect(redirect_uri);
             }
@@ -130,7 +138,7 @@ namespace NJLFramework.WebApi.Controllers
                 new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );
 
-            var returnUrl = "/ApiAuthorize";
+            var returnUrl = "/api";
             return LocalRedirect(returnUrl);
         }
     }
